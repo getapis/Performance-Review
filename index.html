@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three-Month Review — Urban Muaythai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B1F3B;
+    --navy-deep:#101227;
+    --red:#C8102E;
+    --canvas:#F4F1E8;
+    --steel:#262B4D;
+    --steel-line:#3A4070;
+    --gold:#D4A24C;
+    --bone:#C9CAD9;
+    --bone-dim:#8489AC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy-deep);
+    color:var(--canvas);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--red);color:var(--canvas);}
+
+  .display{font-family:'Bebas Neue',sans-serif; letter-spacing:0.03em;}
+  .cond{font-family:'Barlow Condensed',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+
+  /* ---- Scorecard tracker (signature element) ---- */
+  #tracker{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:50;
+    background:rgba(16,18,39,0.88);
+    border:1px solid var(--steel-line);
+    backdrop-filter:blur(6px);
+    padding:14px 18px;
+    min-width:168px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+  }
+  #tracker .rd-label{
+    font-size:0.62rem;
+    letter-spacing:0.18em;
+    color:var(--bone-dim);
+    text-transform:uppercase;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+  }
+  #tracker .rd-num{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin:2px 0 6px 0;
+  }
+  #tracker .rd-num .big{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--gold);
+    line-height:1;
+  }
+  #tracker .rd-num .of{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.85rem;
+    color:var(--bone-dim);
+  }
+  #tracker .rd-title{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    font-size:0.82rem;
+    color:var(--canvas);
+    line-height:1.2;
+  }
+  #tracker .lights{
+    display:flex;
+    gap:4px;
+    margin-top:10px;
+  }
+  #tracker .lights span{
+    height:4px;
+    flex:1;
+    background:var(--steel-line);
+    transition:background 0.3s ease;
+  }
+  #tracker .lights span.lit{background:var(--red);}
+  @media (max-width:720px){
+    #tracker{left:14px;right:14px;bottom:14px;min-width:unset;}
+  }
+
+  /* ---- Section shell ---- */
+  section.round{
+    position:relative;
+    padding:100px 8vw 90px 8vw;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  section.round.dark{background:transparent;}
+  section.round.alt{background:var(--navy);}
+
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .eyebrow .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:3px 10px;
+  }
+  .eyebrow .rule{flex:1;height:1px;background:var(--steel-line);}
+
+  h2.round-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(2.6rem,6vw,4.6rem);
+    line-height:0.95;
+    letter-spacing:0.01em;
+    color:var(--canvas);
+    margin-bottom:8px;
+  }
+  h2.round-title .accent{color:var(--red);}
+
+  .round-sub{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.15rem;
+    color:var(--bone);
+    max-width:640px;
+    margin-bottom:44px;
+    font-weight:500;
+  }
+
+  /* ---- Ring-rope divider between rounds ---- */
+  .rope{
+    position:relative;
+    height:34px;
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+  }
+  .rope::before,.rope::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background:repeating-linear-gradient(90deg, var(--steel-line) 0 10px, transparent 10px 16px);
+  }
+  .rope .bell{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:0.2em;
+    color:var(--bone-dim);
+    padding:0 16px;
+    white-space:nowrap;
+  }
+
+  /* ---- Content patterns ---- */
+  .grid-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:16px;
+    margin-top:8px;
+  }
+  .card{
+    background:var(--steel);
+    border:1px solid var(--steel-line);
+    padding:20px 22px;
+  }
+  .card h3{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--canvas);
+    margin-bottom:8px;
+  }
+  .card p, .card ul{
+    font-size:0.92rem;
+    color:var(--bone);
+    line-height:1.55;
+  }
+  .card ul{padding-left:18px;}
+  .card li{margin-bottom:6px;}
+
+  .improvement-scorecard{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:34px;}
+  .improvement-item{border:1px solid var(--steel-line);background:rgba(38,43,77,0.72);padding:16px 18px;}
+  .improvement-item .number{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--gold);letter-spacing:0.12em;}
+  .improvement-item h3{font-family:'Barlow Condensed',sans-serif;color:var(--canvas);font-size:1.05rem;margin:5px 0 4px;}
+  .improvement-item p{font-size:0.8rem;line-height:1.45;color:var(--bone-dim);}
+
+  .before-impact{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:14px;margin:24px 0 30px;}
+  .before-impact > div{border-top:3px solid var(--steel-line);background:var(--steel);padding:18px;}
+  .before-impact .improved{border-top-color:var(--red);}
+  .before-impact .impact{border-top-color:var(--gold);}
+  .before-impact .label{font-family:'JetBrains Mono',monospace;color:var(--bone-dim);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;}
+  .before-impact p{font-size:0.9rem;color:var(--bone);line-height:1.5;}
+  .impact-banner{margin-top:28px;border-left:3px solid var(--gold);background:rgba(212,162,76,0.08);padding:17px 20px;color:var(--canvas);line-height:1.55;}
+  .impact-banner strong{font-family:'Barlow Condensed',sans-serif;color:var(--gold);letter-spacing:0.04em;text-transform:uppercase;}
+  @media (max-width:800px){.before-impact{grid-template-columns:1fr;}}
+
+  .stat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:34px;
+    margin:28px 0 8px 0;
+  }
+  .stat{min-width:120px;}
+  .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:2.6rem;
+    color:var(--red);
+    line-height:1;
+  }
+  .stat .lab{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--bone-dim);
+    margin-top:4px;
+  }
+
+  ul.punchlist{list-style:none;padding:0;}
+  ul.punchlist li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:10px;
+    font-size:0.98rem;
+    line-height:1.55;
+    color:var(--bone);
+  }
+  ul.punchlist li::before{
+    content:"•";
+    color:var(--red);
+    position:absolute;
+    left:0;
+    font-size:1.2rem;
+    line-height:1.2;
+  }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  @media (max-width:800px){.two-col{grid-template-columns:1fr;}}
+
+  blockquote.corner{
+    border-left:3px solid var(--gold);
+    padding:6px 0 6px 22px;
+    margin:18px 0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.25rem;
+    font-style:italic;
+    color:var(--canvas);
+    line-height:1.4;
+  }
+  blockquote.corner cite{
+    display:block;
+    margin-top:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-style:normal;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    color:var(--bone-dim);
+  }
+
+  /* ---- Hero ---- */
+  #hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:8vw;
+    position:relative;
+    background:
+      radial-gradient(circle at 78% 18%, rgba(200,16,46,0.16), transparent 45%),
+      var(--navy-deep);
+  }
+  #hero .corners{
+    display:flex;
+    justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.15em;
+    color:var(--bone-dim);
+    text-transform:uppercase;
+    margin-bottom:60px;
+  }
+  #hero .corners span:last-child{color:var(--red);}
+  #hero h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(3.4rem,11vw,8.5rem);
+    line-height:0.88;
+    color:var(--canvas);
+  }
+  #hero h1 .red{color:var(--red);}
+  #hero .sub{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.3rem;
+    color:var(--bone);
+    margin-top:26px;
+    max-width:600px;
+  }
+  #hero .meta{
+    display:flex;
+    gap:40px;
+    margin-top:56px;
+    flex-wrap:wrap;
+  }
+  #hero .meta div{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--bone-dim);}
+  #hero .meta strong{display:block;color:var(--canvas);font-size:0.95rem;margin-top:4px;font-family:'Barlow Condensed',sans-serif;font-weight:600;}
+  #hero .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:8vw;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.15em;
+    color:var(--bone-dim);
+    text-transform:uppercase;
+  }
+  #hero .note{
+    margin-top:40px;
+    max-width:640px;
+    font-size:0.85rem;
+    color:var(--bone-dim);
+    border-top:1px solid var(--steel-line);
+    padding-top:16px;
+    line-height:1.6;
+  }
+
+  /* ---- Closing ---- */
+  #closing{
+    text-align:center;
+    padding:140px 8vw 160px 8vw;
+    background:linear-gradient(180deg, transparent, rgba(200,16,46,0.06));
+  }
+  #closing .display-line{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(2.4rem,7vw,5rem);
+    color:var(--canvas);
+    line-height:1;
+  }
+  #closing .display-line .red{color:var(--red);}
+  #closing p{
+    max-width:640px;
+    margin:24px auto 0 auto;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.2rem;
+    color:var(--bone);
+    line-height:1.6;
+  }
+  #closing .sig{
+    margin-top:50px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.8rem;
+    color:var(--bone-dim);
+    letter-spacing:0.1em;
+  }
+
+  @media (max-width:720px){
+    section.round{padding:70px 6vw 60px 6vw;}
+    .stat-row{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="tracker">
+  <div class="rd-label">Now Reviewing</div>
+  <div class="rd-num"><span class="big" id="tracker-num">00</span><span class="of">/ 10</span></div>
+  <div class="rd-title" id="tracker-title">The Opening Bell</div>
+  <div class="lights" id="tracker-lights"></div>
+</div>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="corners">
+    <span>Prepared for Melissa Walsh</span>
+    <span>Urban Army — One Team, One Fight</span>
+  </div>
+  <h1>THREE<br>MONTH<br>REVIEW<span class="red">.</span></h1>
+  <div class="sub">How three months of operational ownership turned manual, scattered work into clearer systems, stronger reporting, and repeatable business processes.</div>
+  <div class="meta">
+    <div>Review Period<strong>27 Apr – 27 Jul 2026</strong></div>
+    <div>Prepared By<strong>Geramel "Ram" Tapis</strong></div>
+    <div>Status<strong>Preliminary Draft</strong></div>
+  </div>
+  <div class="note">Based on Gmail evidence available through geramel@supersidekick.co and the Urban Muaythai Slack DM through 16 July 2026. To be refreshed before 27 July and expanded once the mel.supersidekick@gmail.com and getfit@urbanmuaythai.com inboxes are connected directly.</div>
+  <div class="scroll-cue">Scroll ↓ Round One</div>
+</div>
+
+<!-- ROUND 1 : IMPROVEMENT SCORECARD -->
+<section class="round dark" data-round="1" data-title="Improvement Scorecard">
+  <div class="eyebrow"><span class="tag">ROUND 01</span><div class="rule"></div></div>
+  <h2 class="round-title">Improvement <span class="accent">Scorecard.</span></h2>
+  <p class="round-sub">The clearest story of the first three months is not simply what was completed, but what became easier, clearer, faster, more accurate, or more repeatable.</p>
+  <ul class="punchlist">
+    <li>I progressed from learning Urban Muaythai's daily operation to improving how the business tracks members, reports performance, manages retention, reviews marketing, documents processes, and delivers campaigns.</li>
+    <li>My main contribution has been turning manual or scattered work into clearer, repeatable systems that the wider team can understand and use.</li>
+    <li>The improvements created stronger visibility, reduced repeated administration, improved accuracy, and supported better operational decisions.</li>
+  </ul>
+  <div class="improvement-scorecard">
+    <div class="improvement-item"><div class="number">01</div><h3>Business Visibility</h3><p>Central reporting across members, attendance, cancellations, campaigns, and finance.</p></div>
+    <div class="improvement-item"><div class="number">02</div><h3>Reporting Automation</h3><p>Less copying and formatting across Daily Numbers, attendance, tally, and campaign tracking.</p></div>
+    <div class="improvement-item"><div class="number">03</div><h3>New-Member Management</h3><p>Clearer starts, sales sources, rollover stages, future starts, and urgent follow-up.</p></div>
+    <div class="improvement-item"><div class="number">04</div><h3>Retention Visibility</h3><p>Sleepers, Fringe, Engaged, Red/Orange Flags, churn, and Member Intelligence.</p></div>
+    <div class="improvement-item"><div class="number">05</div><h3>Data Accuracy</h3><p>Aligned cancellation dates, net growth, AutoPay classifications, and reporting definitions.</p></div>
+    <div class="improvement-item"><div class="number">06</div><h3>Business Continuity</h3><p>SOPs, tutorials, playbooks, portal resources, and backup instructions.</p></div>
+    <div class="improvement-item"><div class="number">07</div><h3>Meta Ads Oversight</h3><p>Daily review, lead-quality analysis, campaign intervention, and repeatable AI-assisted review.</p></div>
+    <div class="improvement-item"><div class="number">08</div><h3>Member Communications</h3><p>Reusable templates, nurture, renewal, referral, campaign, and operational messaging.</p></div>
+    <div class="improvement-item"><div class="number">09</div><h3>Campaign Execution</h3><p>One operating structure for forms, QR codes, content, missions, points, and rewards.</p></div>
+    <div class="improvement-item"><div class="number">10</div><h3>Academy Vision — WIP</h3><p>Melissa's future vision translated into working drafts that are ready for review and refinement.</p></div>
+    <div class="improvement-item"><div class="number">11</div><h3>Financial Reporting</h3><p>Source reports translated into management-level financial insights and Xero workflows.</p></div>
+    <div class="improvement-item"><div class="number">12</div><h3>Accountability</h3><p>Consistent priorities, progress, blockers, completions, questions, and daily updates.</p></div>
+  </div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 01 ◆</span></div>
+
+<!-- ROUND 2 : VISIBILITY & ACCOUNTABILITY -->
+<section class="round alt" data-round="2" data-title="Visibility & Accountability">
+  <div class="eyebrow"><span class="tag">ROUND 02</span><div class="rule"></div></div>
+  <h2 class="round-title">Visibility & <span class="accent">Accountability.</span></h2>
+  <p class="round-sub">A clearer daily rhythm for priorities, operations, exceptions, reporting, and decisions.</p>
+  <div class="before-impact">
+    <div><div class="label">Before</div><p>Operational information was spread across Clubworx, inboxes, spreadsheets, reports, and individual team knowledge.</p></div>
+    <div class="improved"><div class="label">What I improved</div><p>I established consistent ownership of daily administration and introduced clearer start-of-day, end-of-day, weekly reporting, and exception-flagging routines.</p></div>
+    <div class="impact"><div class="label">Impact</div><p>Melissa gained faster visibility into priorities, completed work, blockers, members needing attention, and the health of recurring operations.</p></div>
+  </div>
+  <div class="two-col">
+    <ul class="punchlist">
+      <li>Daily Clubworx analysis, GetFit inbox management, and operational task handling.</li>
+      <li>Reviewing flags, waivers, suspensions, cancellations, failed payments, and expiring memberships.</li>
+      <li>Maintaining the New Member Spreadsheet and Daily Numbers Spreadsheet.</li>
+      <li>Updating attendance, rollover, and fringe-reach-out information.</li>
+    </ul>
+    <ul class="punchlist">
+      <li>Supporting Red Flag and Orange Flag member outreach.</li>
+      <li>Preparing weekly numbers, attendance links, and low-attendance callouts.</li>
+      <li>Checking agreements, debit dates, rollover status, and membership exceptions.</li>
+      <li>Supporting invoicing, MYOB, the Xero transition, and management-report setup.</li>
+      <li>Daily start-of-day / end-of-day updates on priorities, progress, and blockers.</li>
+    </ul>
+  </div>
+  <div class="impact-banner"><strong>Improvement:</strong> The work moved from task-by-task support to a visible operating rhythm with clearer ownership and fewer hidden exceptions.</div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 02 ◆</span></div>
+
+<!-- ROUND 3 : REPORTING & BI -->
+<section class="round dark" data-round="3" data-title="Reporting & Business Intelligence">
+  <div class="eyebrow"><span class="tag">ROUND 03</span><div class="rule"></div></div>
+  <h2 class="round-title">Reporting & <span class="accent">Intelligence.</span></h2>
+  <p class="round-sub">Four fronts of visibility improved this quarter — new members, attendance, retention, and finance.</p>
+  <div class="before-impact">
+    <div><div class="label">Before</div><p>Recurring reports required repeated manual updates and important information was split across separate tools.</p></div>
+    <div class="improved"><div class="label">What I improved</div><p>I connected, automated, and reorganised the core reporting workflows while introducing historical and intelligence views.</p></div>
+    <div class="impact"><div class="label">Impact</div><p>Reporting became faster, more consistent, easier to interpret, and more useful for follow-up and management decisions.</p></div>
+  </div>
+  <div class="grid-cards">
+    <div class="card">
+      <h3>New Member & Daily Numbers</h3>
+      <ul>
+        <li>Built and refined the New Member Spreadsheet for sales, starts, rollover, and outcomes</li>
+        <li>Automated Daily Numbers off the New Member Spreadsheet</li>
+        <li>Corrected cancellation-date logic to align with Clubworx</li>
+        <li>Began future-start and urgent-member handling</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Attendance & Retention</h3>
+      <ul>
+        <li>Restructured attendance tracking with automated colour coding</li>
+        <li>Semi-automated Past 7 Days Attendance via Apps Script</li>
+        <li>Built an Attendance Dashboard: Sleepers, Fringe, Engaged</li>
+        <li>Daily Drive-folder checks; weekly/monthly historical views</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Member & Cancellation Intel</h3>
+      <ul>
+        <li>Created the Member Intelligence Spreadsheet</li>
+        <li>Built Cancellation Analysis and Churn Analysis reporting</li>
+        <li>Added both to the Assistant 2.0 resource page</li>
+        <li>Reviewed plan classification for AutoPay accuracy</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Financial & Management</h3>
+      <ul>
+        <li>Prepared an April / YTD snapshot: revenue, margins, cash, debt</li>
+        <li>Flagged membership revenue strength vs. cost movements</li>
+        <li>Supported MYOB reporting through the transition period</li>
+        <li>Began Xero setup and located the Management Report pathway</li>
+      </ul>
+    </div>
+  </div>
+  <div class="impact-banner"><strong>Improvement:</strong> Raw operational data became management visibility — with better automation, clearer definitions, and stronger decision context.</div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 03 ◆</span></div>
+
+<!-- ROUND 4 : SYSTEMS & SOPs -->
+<section class="round alt" data-round="4" data-title="Systems, SOPs & Continuity">
+  <div class="eyebrow"><span class="tag">ROUND 04</span><div class="rule"></div></div>
+  <h2 class="round-title">Systems & <span class="accent">Continuity.</span></h2>
+  <p class="round-sub">The goal: reduce reliance on memory or any one person's knowledge.</p>
+  <div class="before-impact">
+    <div><div class="label">Before</div><p>Several processes depended on verbal knowledge, recordings, or the person who normally completed the task.</p></div>
+    <div class="improved"><div class="label">What I improved</div><p>I documented workflows, created tutorials and playbooks, and began centralising resources in the staff portal.</p></div>
+    <div class="impact"><div class="label">Impact</div><p>Processes became easier to teach, repeat, hand over, and recover when a team member is unavailable.</p></div>
+  </div>
+  <ul class="punchlist">
+    <li>Drafted five operating procedures in the first days of the engagement, then updated and expanded Clubworx Analysis SOPs.</li>
+    <li>Documented workflows for memberships expiring within seven days and suspensions being lifted.</li>
+    <li>Built the New Member Spreadsheet SOP as the process evolved; updated the Attendance SOP after automation.</li>
+    <li>Created video tutorials for adding new members and using operational resources.</li>
+    <li>Drafted and completed the Newbie Playbook and a revised Newbie Protocol, with supporting videos.</li>
+    <li>Began centralising links, tools, and intelligence resources in the staff portal / Assistant 2.0.</li>
+    <li>Standardised team email signatures with logo and clickable links; set up personalised files for the team.</li>
+  </ul>
+  <blockquote class="corner">Melissa's feedback highlighted the importance of every automated spreadsheet also having a clear, accessible manual procedure — now a priority for the next phase.</blockquote>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 04 ◆</span></div>
+
+<!-- ROUND 5 : MARKETING & COMMS -->
+<section class="round dark" data-round="5" data-title="Marketing, Leads & Communications">
+  <div class="eyebrow"><span class="tag">ROUND 05</span><div class="rule"></div></div>
+  <h2 class="round-title">Marketing & <span class="accent">Comms.</span></h2>
+  <p class="round-sub">Marketing oversight improved from checking activity to assessing lead quality, conversion, location, and campaign health.</p>
+  <div class="before-impact">
+    <div><div class="label">Before</div><p>Ad reviews focused more heavily on campaign activity and headline lead numbers.</p></div>
+    <div class="improved"><div class="label">What I improved</div><p>I introduced structured daily reviews, deeper lead analysis, repeatable AI-assisted evaluation, and earlier campaign intervention.</p></div>
+    <div class="impact"><div class="label">Impact</div><p>Lead quality strengthened, underperformance was identified sooner, and campaign decisions became more evidence-based.</p></div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="num">186</div><div class="lab">Leads reviewed</div></div>
+    <div class="stat"><div class="num">173</div><div class="lab">Paid / 13 organic</div></div>
+    <div class="stat"><div class="num">24</div><div class="lab">Conversions identified</div></div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;color:var(--canvas);margin-bottom:10px;font-size:1.1rem;">Meta Ads Review</h3>
+      <ul class="punchlist">
+        <li>Organic leads converted at a materially higher rate than paid in this review</li>
+        <li>Built a Claude skill for Urban Muaythai's daily Meta review method</li>
+        <li>Turned off an underperformer with sub-1% CTR / link CTR</li>
+        <li>Confirmed a lead from the female-avatar campaign; refined the male-avatar campaign</li>
+        <li>Monitored location quality, Advantage+ behaviour, and campaign deterioration over time</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;color:var(--canvas);margin-bottom:10px;font-size:1.1rem;">Email & Nurture</h3>
+      <ul class="punchlist">
+        <li>Drafted member emails, prospect nurture, referral, event, and campaign comms</li>
+        <li>Built reusable Clubworx email templates</li>
+        <li>Responded directly to member survey feedback with what's changing</li>
+        <li>Supported cancellation and renewal communications</li>
+        <li>Supported Thailand Tour payment reminders and corrections</li>
+      </ul>
+    </div>
+  </div>
+  <div class="impact-banner"><strong>Client-observed impact:</strong> “The leads have been much stronger since you have been reviewing them daily; I don't want this to drop off.”</div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 05 ◆</span></div>
+
+<!-- ROUND 6 : WINTER WEAPON -->
+<section class="round alt" data-round="6" data-title="Winter Weapon Campaign">
+  <div class="eyebrow"><span class="tag">ROUND 06</span><div class="rule"></div></div>
+  <h2 class="round-title">Winter Weapon <span class="accent">Campaign.</span></h2>
+  <p class="round-sub">Full campaign infrastructure — from registration to reward tracking.</p>
+  <div class="before-impact">
+    <div><div class="label">Before</div><p>The campaign had multiple moving parts across planning, registration, design, communications, missions, points, and rewards.</p></div>
+    <div class="improved"><div class="label">What I improved</div><p>I organised those parts into one operating structure supported by schedules, templates, trackers, content, and walkthroughs.</p></div>
+    <div class="impact"><div class="label">Impact</div><p>Campaign execution and reward progress became easier to coordinate, communicate, and monitor.</p></div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="num">27</div><div class="lab">Members hit shorts tier</div></div>
+  </div>
+  <ul class="punchlist">
+    <li>Cleaned and organised the campaign plan and implementation checklist.</li>
+    <li>Coordinated the registration form, QR code, poster template, and final poster.</li>
+    <li>Built and revised the campaign schedule; created the Winter Weapon Tracker and a walkthrough video.</li>
+    <li>Produced teaser graphics, Instagram post and Story drafts.</li>
+    <li>Supported weekly mission emails, result updates, mental-health awareness messaging, and video content.</li>
+    <li>Updated attendance and Bingo points; built an interactive tracker for reward progress.</li>
+    <li>27 participants had reached the shorts tier and were progressing toward the water-bottle tier at the time of review.</li>
+  </ul>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 06 ◆</span></div>
+
+<!-- ROUND 7 : ACADEMY -->
+<section class="round dark" data-round="7" data-title="Urban Muaythai Academy Resources">
+  <div class="eyebrow"><span class="tag">ROUND 07</span><div class="rule"></div></div>
+  <h2 class="round-title">Academy <span class="accent">Resources.</span></h2>
+  <p class="round-sub">An instruction-led work in progress that begins translating Melissa's future vision for Urban Muaythai into resources that can be reviewed, tested, and refined.</p>
+  <div class="before-impact">
+    <div><div class="label">The Vision</div><p>Melissa provided the direction for three connected stages: Kids Academy, Teens Academy, and the Development Squad.</p></div>
+    <div class="improved"><div class="label">My contribution so far</div><p>Following her instructions, I converted the supplied concepts and source documents into working handbook, website, and Progress Passport drafts.</p></div>
+    <div class="impact"><div class="label">Current position</div><p>The resources are not final. They provide a tangible starting point for Melissa to review, refine, and shape as Urban Muaythai's future Academy vision develops.</p></div>
+  </div>
+  <div class="grid-cards">
+    <div class="card"><h3>Working Handbook Draft</h3><p>Prepared an HTML and PDF interpretation of the supplied Kids Academy direction for Melissa's review.</p></div>
+    <div class="card"><h3>Progress Passport Concept</h3><p>Created an initial attendance, progression, and Academy Stars concept that remains open to operational refinement.</p></div>
+    <div class="card"><h3>Connected Pathway Drafts</h3><p>Built early web drafts for the Kids Academy, Teens Academy, and Development Squad to help visualise how the future pathway could connect.</p></div>
+  </div>
+  <div class="impact-banner"><strong>My commitment:</strong> This work is based on Melissa's instructions and vision. I am ready to follow her feedback, make every requested refinement, and continue developing the resources until they accurately represent the future direction of Urban Muaythai.</div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 07 ◆</span></div>
+
+<!-- ROUND 8 : JUDGES' SCORECARD -->
+<section class="round alt" data-round="8" data-title="The Judges' Scorecard">
+  <div class="eyebrow"><span class="tag">ROUND 08</span><div class="rule"></div></div>
+  <h2 class="round-title">The Judges' <span class="accent">Scorecard.</span></h2>
+  <p class="round-sub">Client feedback from across the quarter.</p>
+  <blockquote class="corner">"You are doing a fantastic job picking things up extremely quick."<cite>MELISSA — EARLY ONBOARDING</cite></blockquote>
+  <blockquote class="corner">"WOW, I'm excited to have a look at it all. A day to move the needle forward on the business!"<cite>MELISSA — 1 JUNE, ON THE AUTOMATION / PLAYBOOK / REPORTING WORK</cite></blockquote>
+  <blockquote class="corner">"The leads have been much stronger since you have been reviewing them daily; I don't want this to drop off."<cite>MELISSA — ON THE META ADS PROCESS</cite></blockquote>
+  <p style="font-family:'Barlow Condensed',sans-serif;color:var(--bone);font-size:1.05rem;margin-top:20px;">Her willingness to help solve the phone/access issue also showed how operationally important maintaining the review process was to her.</p>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 08 ◆</span></div>
+
+<!-- ROUND 9 : GROWTH & PROCESS STRENGTHENING -->
+<section class="round dark" data-round="9" data-title="Growth & Process Strengthening">
+  <div class="eyebrow"><span class="tag">ROUND 09</span><div class="rule"></div></div>
+  <h2 class="round-title">Growth & <span class="accent">Stronger Practice.</span></h2>
+  <p class="round-sub">The lessons I converted into clearer checks, better communication, and more dependable processes.</p>
+  <ul class="punchlist">
+    <li>Strengthened the approval and timing checks used for Red/Orange Flag outreach.</li>
+    <li>Added more deliberate verification for payment amounts and member communications.</li>
+    <li>Reconciled cancellation-date logic with Clubworx and corrected the related reporting.</li>
+    <li>Improved communication around blockers, access issues, and availability.</li>
+    <li>Made backup instructions a required companion to automation and system improvements.</li>
+    <li>Introduced stronger definition checks for rollover, AutoPay, dates sold, and attendance cohorts before finalising reports.</li>
+  </ul>
+  <div class="impact-banner"><strong>Improvement:</strong> Feedback was converted into process changes, making the work more accurate, transparent, and resilient over time.</div>
+</section>
+
+<div class="rope"><span class="bell">◆ END ROUND 09 ◆</span></div>
+
+<!-- ROUND 10 : NEXT QUARTER GAMEPLAN -->
+<section class="round alt" data-round="10" data-title="Next Quarter Gameplan">
+  <div class="eyebrow"><span class="tag">ROUND 10</span><div class="rule"></div></div>
+  <h2 class="round-title">Next Quarter <span class="accent">Gameplan.</span></h2>
+  <p class="round-sub">Priorities for the next three months.</p>
+  <ul class="punchlist">
+    <li>Finish a clear procedure page for every automated spreadsheet and critical recurring workflow.</li>
+    <li>Complete adult / U18 segmentation in attendance and retention reporting.</li>
+    <li>Strengthen future-start and urgent-member tracking in the New Member workflow.</li>
+    <li>Continue daily Meta Ads review with stronger lead-quality and conversion tracking.</li>
+    <li>Establish a stable reporting rhythm in Xero and complete the accounting-system transition.</li>
+    <li>Refine Member Intelligence, Cancellation Analysis, and Retention Intelligence into one integrated view.</li>
+    <li>Continue improving email nurture and member communication workflows.</li>
+    <li>Finalise and refine the Academy handbooks, passports, and connected pathway.</li>
+    <li>Measure Winter Weapon participation, reward fulfilment, and campaign outcomes.</li>
+    <li>Continue consolidating SOPs, videos, links, and resources into one accessible business portal.</li>
+  </ul>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="display-line">ONE TEAM,<br><span class="red">ONE FIGHT.</span></div>
+  <p>Three months in, I have moved from learning Urban Muaythai's daily operation to improving how the business tracks members, reports performance, manages retention, reviews marketing, documents processes, and delivers campaigns. I am proudest of the improvements that now continue beyond a single task: automated reporting, stronger member and cancellation intelligence, the Meta Ads review workflow, reusable playbooks and SOPs, and coordinated campaign infrastructure. I have also started translating Melissa's future Academy vision into working drafts, and I am ready to follow every refinement as that vision develops. Next quarter, my focus is to make every system simpler, better documented, and easier for the whole team to use.</p>
+  <div class="sig">GERAMEL "RAM" TAPIS — SUPER SIDEKICK</div>
+</section>
+
+<script>
+  const rounds = Array.from(document.querySelectorAll('.round[data-round]'));
+  const totalRounds = rounds.length;
+  const numEl = document.getElementById('tracker-num');
+  const titleEl = document.getElementById('tracker-title');
+  const lightsEl = document.getElementById('tracker-lights');
+
+  // build lights
+  for(let i=0;i<totalRounds;i++){
+    const s = document.createElement('span');
+    lightsEl.appendChild(s);
+  }
+  const lightEls = lightsEl.querySelectorAll('span');
+
+  function update(current){
+    numEl.textContent = String(current).padStart(2,'0');
+    const match = rounds.find(r => Number(r.getAttribute('data-round')) === current);
+    titleEl.textContent = match ? match.getAttribute('data-title') : 'The Opening Bell';
+    lightEls.forEach((el,i)=>{
+      el.classList.toggle('lit', i < current);
+    });
+  }
+  update(0);
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        update(Number(entry.target.getAttribute('data-round')));
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  rounds.forEach(r => observer.observe(r));
+
+  // Final bell -> fill all lights
+  const closing = document.getElementById('closing');
+  const closingObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        numEl.textContent = String(totalRounds).padStart(2,'0');
+        titleEl.textContent = 'Final Bell';
+        lightEls.forEach(el=>el.classList.add('lit'));
+      }
+    });
+  }, { threshold: 0.3 });
+  closingObserver.observe(closing);
+</script>
+
+</body>
+</html>
