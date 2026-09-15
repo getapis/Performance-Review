@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Urban Muaythai three-month performance review: operational improvements, client feedback, and the next 90-day plan.">
+<meta name="theme-color" content="#101227">
 <title>Three-Month Review — Urban Muaythai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -372,16 +375,92 @@
     section.round{padding:70px 6vw 60px 6vw;}
     .stat-row{gap:24px;}
   }
+
+  /* Navigation and reading experience */
+  :root{--bone-dim:#A4A8C4;--accent-text:#FF627B;}
+  h2.round-title .accent,#hero h1 .red,#closing .display-line .red,.stat .num{color:var(--accent-text);}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:5px;}
+  .skip-link{position:fixed;top:12px;left:12px;z-index:100;padding:12px 18px;background:var(--canvas);color:var(--navy-deep);transform:translateY(-180%);}
+  .skip-link:focus{transform:translateY(0);}
+  #hero{min-height:100svh;padding-bottom:100px;}
+  #hero .corners{gap:24px;flex-wrap:wrap;line-height:1.6;}
+  #hero .corners span:last-child{color:var(--accent-text);}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+  .action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid var(--steel-line);background:var(--steel);color:var(--canvas);font:600 .85rem 'Inter',sans-serif;text-decoration:none;cursor:pointer;}
+  .action.primary{background:var(--red);border-color:var(--red);}
+  .action:hover{border-color:var(--gold);}
+  [hidden]{display:none!important;}
+  #contents{max-width:1180px;margin:auto;padding:36px 8vw;border-block:1px solid var(--steel-line);background:var(--navy);scroll-margin-top:24px;}
+  #contents h2{font:2rem 'Bebas Neue',sans-serif;margin-bottom:8px;}
+  #contents p{font-size:.9rem;line-height:1.6;color:var(--bone);margin-bottom:20px;}
+  #contents ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;}
+  #contents a{display:flex;align-items:center;gap:12px;padding:12px;min-height:48px;border:1px solid var(--steel-line);font-size:.85rem;line-height:1.5;text-decoration:none;}
+  #contents a:hover,#contents a[aria-current="location"]{background:var(--steel);border-color:var(--gold);}
+  #contents .index{font-family:'JetBrains Mono',monospace;color:var(--gold);}
+  section.round{scroll-margin-top:24px;}
+  .round-title,.card,.improvement-item{overflow-wrap:anywhere;}
+  .grid-cards{grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));}
+  .improvement-scorecard{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));}
+  .two-col,.before-impact{min-width:0;}
+  .two-col>*{min-width:0;}
+  #tracker{width:230px;}
+  #tracker .tracker-links{display:flex;gap:16px;margin-top:12px;font-size:.75rem;}
+  #tracker .tracker-links a{display:inline-flex;align-items:center;min-height:32px;text-underline-offset:4px;}
+  body{padding-bottom:170px;}
+  @media(min-width:1500px){body{padding-bottom:0;}}
+  @media(max-width:720px){
+    body{padding-bottom:110px;}
+    #tracker{width:auto;bottom:0;left:0;right:0;padding:10px 6vw;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;}
+    #tracker .rd-label,#tracker .lights{display:none;}
+    #tracker .rd-num{grid-row:1 / 3;margin:0;}
+    #tracker .rd-num .big{font-size:1.4rem;}
+    #tracker .rd-title{font-size:.85rem;}
+    #tracker .tracker-links{margin:0;gap:20px;}
+    #contents{padding:30px 6vw;}
+    #contents ol{grid-template-columns:1fr;}
+    #hero .meta{gap:24px;margin-top:32px;}
+    #hero .corners{margin-bottom:36px;}
+    #hero .scroll-cue{position:static;margin-top:30px;}
+    .round-sub{margin-bottom:28px;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{transition:none!important;}}
+  @media print{
+    @page{margin:16mm;}
+    :root{--canvas:#111;--bone:#222;--bone-dim:#444;--gold:#664900;--steel-line:#ccc;--accent-text:#9B1028;}
+    html{scroll-behavior:auto;}
+    body{background:white!important;color:#111;padding:0;font-size:10pt;}
+    #tracker,.hero-actions,.scroll-cue,.skip-link,.rope,#contents{display:none!important;}
+    #hero{min-height:0;padding:0 0 24px;background:none;}
+    #hero .corners{margin-bottom:24px;}
+    #hero h1{font-size:48pt;line-height:1;}
+    #hero .meta{margin-top:20px;}
+    section.round,section.round.alt,#closing{padding:24px 0;background:none;max-width:none;}
+    section.round{break-before:page;}
+    h2.round-title{font-size:30pt;line-height:1.1;}
+    h2,h3,.eyebrow{break-after:avoid;}
+    .round-sub{margin-bottom:20px;}
+    .card,.improvement-item,.before-impact>div,.impact-banner{background:none;break-inside:avoid;}
+    blockquote,li{break-inside:avoid;}
+    .grid-cards,.improvement-scorecard{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .two-col,.before-impact{grid-template-columns:1fr;gap:12px;}
+    .stat .num{font-size:26pt;}
+    #closing .display-line{font-size:32pt;}
+    p,li{orphans:3;widows:3;}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#round-1">Skip to review</a>
+<main id="review">
 
-<div id="tracker">
+<aside id="tracker" aria-label="Review progress" hidden>
   <div class="rd-label">Now Reviewing</div>
   <div class="rd-num"><span class="big" id="tracker-num">00</span><span class="of">/ 10</span></div>
   <div class="rd-title" id="tracker-title">The Opening Bell</div>
-  <div class="lights" id="tracker-lights"></div>
-</div>
+  <div class="lights" id="tracker-lights" aria-hidden="true"></div>
+  <div class="tracker-links"><a href="#contents">All rounds</a><a href="#hero">Back to top</a></div>
+</aside>
 
 <!-- HERO -->
 <div id="hero">
@@ -396,13 +475,16 @@
     <div>Prepared By<strong>Geramel "Ram" Tapis</strong></div>
     <div>Status<strong>Client Review</strong></div>
   </div>
-  <div class="scroll-cue">Scroll ↓ Round One</div>
+  <div class="hero-actions"><a class="action primary" href="#round-1">Read the review ↓</a><a class="action" href="#round-10">Next 90 days</a><button class="action" id="print-review" type="button" hidden>Print / Save PDF</button></div>
+  <div class="scroll-cue">10 rounds · Progress, feedback &amp; next steps</div>
 </div>
 
+<nav id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Your review, round by round.</h2><p>Read from the beginning or jump straight to the discussion that matters.</p><ol><li><a href="#round-1"><span class="index">01</span><span>Improvement Scorecard</span></a></li><li><a href="#round-2"><span class="index">02</span><span>Visibility & Accountability</span></a></li><li><a href="#round-3"><span class="index">03</span><span>Reporting & Business Intelligence</span></a></li><li><a href="#round-4"><span class="index">04</span><span>Systems, SOPs & Continuity</span></a></li><li><a href="#round-5"><span class="index">05</span><span>Marketing, Leads & Communications</span></a></li><li><a href="#round-6"><span class="index">06</span><span>Winter Weapon Campaign</span></a></li><li><a href="#round-7"><span class="index">07</span><span>Urban Muaythai Academy Resources</span></a></li><li><a href="#round-8"><span class="index">08</span><span>The Judges' Scorecard</span></a></li><li><a href="#round-9"><span class="index">09</span><span>Growth & Process Strengthening</span></a></li><li><a href="#round-10"><span class="index">10</span><span>90-Day Gameplan</span></a></li></ol></nav>
+
 <!-- ROUND 1 : IMPROVEMENT SCORECARD -->
-<section class="round dark" data-round="1" data-title="Improvement Scorecard">
+<section id="round-1" class="round dark" data-round="1" data-title="Improvement Scorecard" aria-labelledby="round-title-1" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 01</span><div class="rule"></div></div>
-  <h2 class="round-title">Improvement <span class="accent">Scorecard.</span></h2>
+  <h2 id="round-title-1" class="round-title">Improvement <span class="accent">Scorecard.</span></h2>
   <p class="round-sub">The clearest story of the first three months is not simply what was completed, but what became easier, clearer, faster, more accurate, or more repeatable.</p>
   <ul class="punchlist">
     <li>I progressed from learning Urban Muaythai's daily operation to improving how the business tracks members, reports performance, manages retention, reviews marketing, documents processes, and delivers campaigns.</li>
@@ -428,9 +510,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 01 ◆</span></div>
 
 <!-- ROUND 2 : VISIBILITY & ACCOUNTABILITY -->
-<section class="round alt" data-round="2" data-title="Visibility & Accountability">
+<section id="round-2" class="round alt" data-round="2" data-title="Visibility & Accountability" aria-labelledby="round-title-2" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 02</span><div class="rule"></div></div>
-  <h2 class="round-title">Visibility & <span class="accent">Accountability.</span></h2>
+  <h2 id="round-title-2" class="round-title">Visibility & <span class="accent">Accountability.</span></h2>
   <p class="round-sub">A clearer daily rhythm for priorities, operations, exceptions, reporting, and decisions.</p>
   <div class="before-impact">
     <div><div class="label">Before</div><p>Operational information was spread across Clubworx, inboxes, spreadsheets, reports, and individual team knowledge.</p></div>
@@ -458,9 +540,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 02 ◆</span></div>
 
 <!-- ROUND 3 : REPORTING & BI -->
-<section class="round dark" data-round="3" data-title="Reporting & Business Intelligence">
+<section id="round-3" class="round dark" data-round="3" data-title="Reporting & Business Intelligence" aria-labelledby="round-title-3" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 03</span><div class="rule"></div></div>
-  <h2 class="round-title">Reporting & <span class="accent">Intelligence.</span></h2>
+  <h2 id="round-title-3" class="round-title">Reporting & <span class="accent">Intelligence.</span></h2>
   <p class="round-sub">Four fronts of visibility improved this quarter — new members, attendance, retention, and finance.</p>
   <div class="before-impact">
     <div><div class="label">Before</div><p>Recurring reports required repeated manual updates and important information was split across separate tools.</p></div>
@@ -511,9 +593,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 03 ◆</span></div>
 
 <!-- ROUND 4 : SYSTEMS & SOPs -->
-<section class="round alt" data-round="4" data-title="Systems, SOPs & Continuity">
+<section id="round-4" class="round alt" data-round="4" data-title="Systems, SOPs & Continuity" aria-labelledby="round-title-4" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 04</span><div class="rule"></div></div>
-  <h2 class="round-title">Systems & <span class="accent">Continuity.</span></h2>
+  <h2 id="round-title-4" class="round-title">Systems & <span class="accent">Continuity.</span></h2>
   <p class="round-sub">Developed and continuously refined through Melissa's instructions, feedback, and operational knowledge—with the shared goal of making critical work easier to understand, repeat, and hand over.</p>
   <div class="before-impact">
     <div><div class="label">Before</div><p>Several processes depended on verbal knowledge, recordings, or the person who normally completed the task.</p></div>
@@ -536,9 +618,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 04 ◆</span></div>
 
 <!-- ROUND 5 : MARKETING & COMMS -->
-<section class="round dark" data-round="5" data-title="Marketing, Leads & Communications">
+<section id="round-5" class="round dark" data-round="5" data-title="Marketing, Leads & Communications" aria-labelledby="round-title-5" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 05</span><div class="rule"></div></div>
-  <h2 class="round-title">Marketing & <span class="accent">Comms.</span></h2>
+  <h2 id="round-title-5" class="round-title">Marketing & <span class="accent">Comms.</span></h2>
   <p class="round-sub">Marketing oversight improved from checking activity to assessing lead quality, conversion, location, and campaign health.</p>
   <div class="before-impact">
     <div><div class="label">Before</div><p>Ad reviews focused more heavily on campaign activity and headline lead numbers.</p></div>
@@ -572,9 +654,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 05 ◆</span></div>
 
 <!-- ROUND 6 : WINTER WEAPON -->
-<section class="round alt" data-round="6" data-title="Winter Weapon Campaign">
+<section id="round-6" class="round alt" data-round="6" data-title="Winter Weapon Campaign" aria-labelledby="round-title-6" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 06</span><div class="rule"></div></div>
-  <h2 class="round-title">Winter Weapon <span class="accent">Campaign.</span></h2>
+  <h2 id="round-title-6" class="round-title">Winter Weapon <span class="accent">Campaign.</span></h2>
   <p class="round-sub">Full campaign infrastructure — from registration to reward tracking.</p>
   <div class="before-impact">
     <div><div class="label">Before</div><p>The campaign had multiple moving parts across planning, registration, design, communications, missions, points, and rewards.</p></div>
@@ -598,9 +680,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 06 ◆</span></div>
 
 <!-- ROUND 7 : ACADEMY -->
-<section class="round dark" data-round="7" data-title="Urban Muaythai Academy Resources">
+<section id="round-7" class="round dark" data-round="7" data-title="Urban Muaythai Academy Resources" aria-labelledby="round-title-7" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 07</span><div class="rule"></div></div>
-  <h2 class="round-title">Academy <span class="accent">Resources.</span></h2>
+  <h2 id="round-title-7" class="round-title">Academy <span class="accent">Resources.</span></h2>
   <p class="round-sub">An instruction-led work in progress that begins translating Melissa's future vision for Urban Muaythai into resources that can be reviewed, tested, and refined.</p>
   <div class="before-impact">
     <div><div class="label">The Vision</div><p>Melissa provided the direction for three connected stages: Kids Academy, Teens Academy, and the Development Squad.</p></div>
@@ -618,9 +700,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 07 ◆</span></div>
 
 <!-- ROUND 8 : JUDGES' SCORECARD -->
-<section class="round alt" data-round="8" data-title="The Judges' Scorecard">
+<section id="round-8" class="round alt" data-round="8" data-title="The Judges' Scorecard" aria-labelledby="round-title-8" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 08</span><div class="rule"></div></div>
-  <h2 class="round-title">The Judges' <span class="accent">Scorecard.</span></h2>
+  <h2 id="round-title-8" class="round-title">The Judges' <span class="accent">Scorecard.</span></h2>
   <p class="round-sub">Client feedback from across the quarter.</p>
   <blockquote class="corner">"You are doing a fantastic job picking things up extremely quick."<cite>MELISSA — EARLY ONBOARDING</cite></blockquote>
   <blockquote class="corner">"WOW, I'm excited to have a look at it all. A day to move the needle forward on the business!"<cite>MELISSA — 1 JUNE, ON THE AUTOMATION / PLAYBOOK / REPORTING WORK</cite></blockquote>
@@ -637,9 +719,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 08 ◆</span></div>
 
 <!-- ROUND 9 : GROWTH & PROCESS STRENGTHENING -->
-<section class="round dark" data-round="9" data-title="Growth & Process Strengthening">
+<section id="round-9" class="round dark" data-round="9" data-title="Growth & Process Strengthening" aria-labelledby="round-title-9" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 09</span><div class="rule"></div></div>
-  <h2 class="round-title">Growth & <span class="accent">Stronger Practice.</span></h2>
+  <h2 id="round-title-9" class="round-title">Growth & <span class="accent">Stronger Practice.</span></h2>
   <p class="round-sub">The lessons I converted into clearer checks, better communication, and more dependable processes.</p>
   <ul class="punchlist">
     <li>Strengthened the approval and timing checks used for Red/Orange Flag outreach.</li>
@@ -655,9 +737,9 @@
 <div class="rope"><span class="bell">◆ END ROUND 09 ◆</span></div>
 
 <!-- ROUND 10 : NEXT QUARTER GAMEPLAN -->
-<section class="round alt" data-round="10" data-title="90-Day Gameplan">
+<section id="round-10" class="round alt" data-round="10" data-title="90-Day Gameplan" aria-labelledby="round-title-10" tabindex="-1">
   <div class="eyebrow"><span class="tag">ROUND 10</span><div class="rule"></div></div>
-  <h2 class="round-title">The Next <span class="accent">90 Days.</span></h2>
+  <h2 id="round-title-10" class="round-title">The Next <span class="accent">90 Days.</span></h2>
   <p class="round-sub">28 July–27 October 2026: make the most valuable systems reliable, documented, measurable, and easier for Melissa and the team to use—without compromising daily operations.</p>
 
   <div class="impact-banner"><strong>Quarter outcome:</strong> By 27 October, Urban Muaythai will have a dependable operating rhythm for its critical workflows, clearer member and retention visibility, a stable marketing and financial review cadence, and Academy drafts that have progressed in line with Melissa's feedback.</div>
@@ -728,52 +810,52 @@
   <div class="sig">GERAMEL "RAM" TAPIS — SUPER SIDEKICK</div>
 </section>
 
+</main>
 <script>
-  const rounds = Array.from(document.querySelectorAll('.round[data-round]'));
-  const totalRounds = rounds.length;
+  const rounds = [...document.querySelectorAll('.round[data-round]')];
+  const sections = [document.getElementById('hero'), ...rounds, document.getElementById('closing')];
+  const tracker = document.getElementById('tracker');
   const numEl = document.getElementById('tracker-num');
   const titleEl = document.getElementById('tracker-title');
   const lightsEl = document.getElementById('tracker-lights');
-
-  // build lights
-  for(let i=0;i<totalRounds;i++){
-    const s = document.createElement('span');
-    lightsEl.appendChild(s);
-  }
-  const lightEls = lightsEl.querySelectorAll('span');
-
-  function update(current){
-    numEl.textContent = String(current).padStart(2,'0');
-    const match = rounds.find(r => Number(r.getAttribute('data-round')) === current);
-    titleEl.textContent = match ? match.getAttribute('data-title') : 'The Opening Bell';
-    lightEls.forEach((el,i)=>{
-      el.classList.toggle('lit', i < current);
+  const links = [...document.querySelectorAll('#contents a')];
+  const printButton = document.getElementById('print-review');
+  const lights = rounds.map(() => lightsEl.appendChild(document.createElement('span')));
+  document.querySelector('#tracker .of').textContent = '/ ' + rounds.length;
+  tracker.hidden = false;
+  printButton.hidden = false;
+  printButton.addEventListener('click', () => window.print());
+  let activeSection;
+  let scheduled = false;
+  function updateTracker() {
+    scheduled = false;
+    // Choose the last section above the reading line, including gaps and the hero.
+    const readingLine = window.innerHeight * 0.35;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= readingLine) current = section;
+      else break;
+    }
+    if (current === activeSection) return;
+    activeSection = current;
+    const isClosing = current.id === 'closing';
+    const round = isClosing ? rounds.length : Number(current.dataset.round || 0);
+    numEl.textContent = String(round).padStart(2, '0');
+    titleEl.textContent = isClosing ? 'Final Bell' : current.dataset.title || 'The Opening Bell';
+    lights.forEach((light, index) => light.classList.toggle('lit', index < round));
+    links.forEach((link, index) => {
+      if (!isClosing && index + 1 === round) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   }
-  update(0);
-
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        update(Number(entry.target.getAttribute('data-round')));
-      }
-    });
-  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-
-  rounds.forEach(r => observer.observe(r));
-
-  // Final bell -> fill all lights
-  const closing = document.getElementById('closing');
-  const closingObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        numEl.textContent = String(totalRounds).padStart(2,'0');
-        titleEl.textContent = 'Final Bell';
-        lightEls.forEach(el=>el.classList.add('lit'));
-      }
-    });
-  }, { threshold: 0.3 });
-  closingObserver.observe(closing);
+  function scheduleUpdate() {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(updateTracker); }
+  }
+  window.addEventListener('scroll', scheduleUpdate, {passive:true});
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('pageshow', scheduleUpdate);
+  document.fonts?.ready.then(scheduleUpdate);
+  updateTracker();
 </script>
 
 </body>
