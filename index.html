@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Three-Month Review — Urban Muaythai</title>
+<meta name="description" content="Ram’s performance review from training on 6 April through 15 September 2026, with client delivery from 27 April, supporting sources, and next priorities.">
+<meta name="theme-color" content="#101227">
+<title>Performance Review · 6 April–15 September 2026 · Urban Muaythai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -372,408 +375,141 @@
     section.round{padding:70px 6vw 60px 6vw;}
     .stat-row{gap:24px;}
   }
-</style>
-</head>
-<body>
 
-<div id="tracker">
+  /* Navigation and reading experience */
+  :root{--bone-dim:#A4A8C4;--accent-text:#FF627B;}
+  h2.round-title .accent,#hero h1 .red,#closing .display-line .red,.stat .num{color:var(--accent-text);}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:5px;}
+  .skip-link{position:fixed;top:12px;left:12px;z-index:100;padding:12px 18px;background:var(--canvas);color:var(--navy-deep);transform:translateY(-180%);}
+  .skip-link:focus{transform:translateY(0);}
+  #hero{min-height:100svh;padding-bottom:100px;}
+  #hero .corners{gap:24px;flex-wrap:wrap;line-height:1.6;}
+  #hero .corners span:last-child{color:var(--accent-text);}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+  .action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid var(--steel-line);background:var(--steel);color:var(--canvas);font:600 .85rem 'Inter',sans-serif;text-decoration:none;cursor:pointer;}
+  .action.primary{background:var(--red);border-color:var(--red);}
+  .action:hover{border-color:var(--gold);}
+  [hidden]{display:none!important;}
+  #contents{max-width:1180px;margin:auto;padding:36px 8vw;border-block:1px solid var(--steel-line);background:var(--navy);scroll-margin-top:24px;}
+  #contents h2{font:2rem 'Bebas Neue',sans-serif;margin-bottom:8px;}
+  #contents p{font-size:.9rem;line-height:1.6;color:var(--bone);margin-bottom:20px;}
+  #contents ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;}
+  #contents a{display:flex;align-items:center;gap:12px;padding:12px;min-height:48px;border:1px solid var(--steel-line);font-size:.85rem;line-height:1.5;text-decoration:none;}
+  #contents a:hover,#contents a[aria-current="location"]{background:var(--steel);border-color:var(--gold);}
+  #contents .index{font-family:'JetBrains Mono',monospace;color:var(--gold);}
+  section.round{scroll-margin-top:24px;}
+  .round-title,.card,.improvement-item{overflow-wrap:anywhere;}
+  .grid-cards{grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));}
+  .improvement-scorecard{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));}
+  .two-col,.before-impact{min-width:0;}
+  .two-col>*{min-width:0;}
+  #tracker{width:230px;}
+  #tracker .tracker-links{display:flex;gap:16px;margin-top:12px;font-size:.75rem;}
+  #tracker .tracker-links a{display:inline-flex;align-items:center;min-height:32px;text-underline-offset:4px;}
+  body{padding-bottom:170px;}
+  @media(min-width:1500px){body{padding-bottom:0;}}
+  @media(max-width:720px){
+    body{padding-bottom:110px;}
+    #tracker{width:auto;bottom:0;left:0;right:0;padding:10px 6vw;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;}
+    #tracker .rd-label,#tracker .lights{display:none;}
+    #tracker .rd-num{grid-row:1 / 3;margin:0;}
+    #tracker .rd-num .big{font-size:1.4rem;}
+    #tracker .rd-title{font-size:.85rem;}
+    #tracker .tracker-links{margin:0;gap:20px;}
+    #contents{padding:30px 6vw;}
+    #contents ol{grid-template-columns:1fr;}
+    #hero .meta{gap:24px;margin-top:32px;}
+    #hero .corners{margin-bottom:36px;}
+    #hero .scroll-cue{position:static;margin-top:30px;}
+    .round-sub{margin-bottom:28px;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{transition:none!important;}}
+  @media print{
+    @page{margin:16mm;}
+    :root{--canvas:#111;--bone:#222;--bone-dim:#444;--gold:#664900;--steel-line:#ccc;--accent-text:#9B1028;}
+    html{scroll-behavior:auto;}
+    body{background:white!important;color:#111;padding:0;font-size:10pt;}
+    #tracker,.hero-actions,.scroll-cue,.skip-link,.rope,#contents{display:none!important;}
+    #hero{min-height:0;padding:0 0 24px;background:none;}
+    #hero .corners{margin-bottom:24px;}
+    #hero h1{font-size:48pt;line-height:1;}
+    #hero .meta{margin-top:20px;}
+    section.round,section.round.alt,#closing{padding:24px 0;background:none;max-width:none;}
+    section.round{break-before:page;}
+    h2.round-title{font-size:30pt;line-height:1.1;}
+    h2,h3,.eyebrow{break-after:avoid;}
+    .round-sub{margin-bottom:20px;}
+    .card,.improvement-item,.before-impact>div,.impact-banner{background:none;break-inside:avoid;}
+    blockquote,li{break-inside:avoid;}
+    .grid-cards,.improvement-scorecard{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .two-col,.before-impact{grid-template-columns:1fr;gap:12px;}
+    .stat .num{font-size:26pt;}
+    #closing .display-line{font-size:32pt;}
+    p,li{orphans:3;widows:3;}
+  }
+.evidence{margin-top:28px;border-top:1px solid var(--steel-line);padding-top:16px;color:var(--bone);font-size:.85rem;line-height:1.7}.evidence summary{cursor:pointer;min-height:36px;color:var(--gold);font-weight:600}.evidence ul{padding:10px 0 0 22px}.evidence li{margin:8px 0}.evidence a{overflow-wrap:anywhere;text-underline-offset:3px}.review-copy{line-height:1.8;color:var(--bone);margin:12px 0 26px}.card p{line-height:1.7}#hero h1{font-size:clamp(3rem,8.2vw,7rem);overflow-wrap:anywhere}.review-note{font-size:.8rem;line-height:1.7;color:var(--bone);margin-top:24px;max-width:660px}@media print{.evidence{display:none}#hero h1{font-size:42pt}.review-note{color:#333}.card{break-inside:avoid}} .feedback-register{margin-top:42px}.feedback-register h3{font-size:1.5rem}.feedback-entry{border:1px solid var(--steel-line);padding:16px 18px;margin:10px 0;background:var(--navy-deep);line-height:1.7}.feedback-entry summary{cursor:pointer;min-height:44px}.feedback-entry summary strong{display:block;font-size:1rem}.feedback-date,.feedback-type{display:block;font-size:.76rem;color:var(--bone)}.feedback-type{color:var(--gold)}.feedback-entry p{margin:14px 0;font-size:.88rem;color:var(--bone)}.feedback-entry a{font-size:.8rem;color:var(--gold)}.corner cite a{font-size:.75rem}@media print{.feedback-register{display:none}} </style>
+</head>
+<body><a class="skip-link" href="#round-1">Skip to review</a><main id="review"><aside id="tracker" aria-label="Review progress" hidden>
   <div class="rd-label">Now Reviewing</div>
   <div class="rd-num"><span class="big" id="tracker-num">00</span><span class="of">/ 10</span></div>
   <div class="rd-title" id="tracker-title">The Opening Bell</div>
-  <div class="lights" id="tracker-lights"></div>
-</div>
-
-<!-- HERO -->
-<div id="hero">
-  <div class="corners">
-    <span>Prepared for Melissa Walsh</span>
-    <span>Urban Army — One Team, One Fight</span>
-  </div>
-  <h1>THREE<br>MONTH<br>REVIEW<span class="red">.</span></h1>
-  <div class="sub">How three months of operational ownership turned manual, scattered work into clearer systems, stronger reporting, and repeatable business processes.</div>
-  <div class="meta">
-    <div>Review Period<strong>27 Apr – 27 Jul 2026</strong></div>
-    <div>Prepared By<strong>Geramel "Ram" Tapis</strong></div>
-    <div>Status<strong>Client Review</strong></div>
-  </div>
-  <div class="scroll-cue">Scroll ↓ Round One</div>
-</div>
-
-<!-- ROUND 1 : IMPROVEMENT SCORECARD -->
-<section class="round dark" data-round="1" data-title="Improvement Scorecard">
-  <div class="eyebrow"><span class="tag">ROUND 01</span><div class="rule"></div></div>
-  <h2 class="round-title">Improvement <span class="accent">Scorecard.</span></h2>
-  <p class="round-sub">The clearest story of the first three months is not simply what was completed, but what became easier, clearer, faster, more accurate, or more repeatable.</p>
-  <ul class="punchlist">
-    <li>I progressed from learning Urban Muaythai's daily operation to improving how the business tracks members, reports performance, manages retention, reviews marketing, documents processes, and delivers campaigns.</li>
-    <li>My main contribution has been turning manual or scattered work into clearer, repeatable systems that the wider team can understand and use.</li>
-    <li>The improvements created stronger visibility, reduced repeated administration, improved accuracy, and supported better operational decisions.</li>
-  </ul>
-  <div class="improvement-scorecard">
-    <div class="improvement-item"><div class="number">01</div><h3>Business Visibility</h3><p>Central reporting across members, attendance, cancellations, campaigns, and finance.</p></div>
-    <div class="improvement-item"><div class="number">02</div><h3>Reporting Automation</h3><p>Less copying and formatting across Daily Numbers, attendance, tally, and campaign tracking.</p></div>
-    <div class="improvement-item"><div class="number">03</div><h3>New-Member Management</h3><p>Clearer starts, sales sources, rollover stages, future starts, and urgent follow-up.</p></div>
-    <div class="improvement-item"><div class="number">04</div><h3>Retention Visibility</h3><p>Sleepers, Fringe, Engaged, Red/Orange Flags, churn, and Member Intelligence.</p></div>
-    <div class="improvement-item"><div class="number">05</div><h3>Data Accuracy</h3><p>Aligned cancellation dates, net growth, AutoPay classifications, and reporting definitions.</p></div>
-    <div class="improvement-item"><div class="number">06</div><h3>Business Continuity</h3><p>SOPs, tutorials, playbooks, portal resources, and backup instructions.</p></div>
-    <div class="improvement-item"><div class="number">07</div><h3>Meta Ads Oversight</h3><p>Daily review, lead-quality analysis, campaign intervention, and repeatable AI-assisted review.</p></div>
-    <div class="improvement-item"><div class="number">08</div><h3>Member Communications</h3><p>Reusable templates, nurture, renewal, referral, campaign, and operational messaging.</p></div>
-    <div class="improvement-item"><div class="number">09</div><h3>Campaign Execution</h3><p>One operating structure for forms, QR codes, content, missions, points, and rewards.</p></div>
-    <div class="improvement-item"><div class="number">10</div><h3>Academy Vision — WIP</h3><p>Melissa's future vision translated into working drafts that are ready for review and refinement.</p></div>
-    <div class="improvement-item"><div class="number">11</div><h3>Financial Reporting</h3><p>Source reports translated into management-level financial insights and Xero workflows.</p></div>
-    <div class="improvement-item"><div class="number">12</div><h3>Accountability</h3><p>Consistent priorities, progress, blockers, completions, questions, and daily updates.</p></div>
-  </div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 01 ◆</span></div>
-
-<!-- ROUND 2 : VISIBILITY & ACCOUNTABILITY -->
-<section class="round alt" data-round="2" data-title="Visibility & Accountability">
-  <div class="eyebrow"><span class="tag">ROUND 02</span><div class="rule"></div></div>
-  <h2 class="round-title">Visibility & <span class="accent">Accountability.</span></h2>
-  <p class="round-sub">A clearer daily rhythm for priorities, operations, exceptions, reporting, and decisions.</p>
-  <div class="before-impact">
-    <div><div class="label">Before</div><p>Operational information was spread across Clubworx, inboxes, spreadsheets, reports, and individual team knowledge.</p></div>
-    <div class="improved"><div class="label">What I improved</div><p>I established consistent ownership of daily administration and introduced clearer start-of-day, end-of-day, weekly reporting, and exception-flagging routines.</p></div>
-    <div class="impact"><div class="label">Impact</div><p>Melissa gained faster visibility into priorities, completed work, blockers, members needing attention, and the health of recurring operations.</p></div>
-  </div>
-  <div class="two-col">
-    <ul class="punchlist">
-      <li>Daily Clubworx analysis, GetFit inbox management, and operational task handling.</li>
-      <li>Reviewing flags, waivers, suspensions, cancellations, failed payments, and expiring memberships.</li>
-      <li>Maintaining the New Member Spreadsheet and Daily Numbers Spreadsheet.</li>
-      <li>Updating attendance, rollover, and fringe-reach-out information.</li>
-    </ul>
-    <ul class="punchlist">
-      <li>Supporting Red Flag and Orange Flag member outreach.</li>
-      <li>Preparing weekly numbers, attendance links, and low-attendance callouts.</li>
-      <li>Checking agreements, debit dates, rollover status, and membership exceptions.</li>
-      <li>Supporting invoicing, MYOB, the Xero transition, and management-report setup.</li>
-      <li>Daily start-of-day / end-of-day updates on priorities, progress, and blockers.</li>
-    </ul>
-  </div>
-  <div class="impact-banner"><strong>Improvement:</strong> The work moved from task-by-task support to a visible operating rhythm with clearer ownership and fewer hidden exceptions.</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 02 ◆</span></div>
-
-<!-- ROUND 3 : REPORTING & BI -->
-<section class="round dark" data-round="3" data-title="Reporting & Business Intelligence">
-  <div class="eyebrow"><span class="tag">ROUND 03</span><div class="rule"></div></div>
-  <h2 class="round-title">Reporting & <span class="accent">Intelligence.</span></h2>
-  <p class="round-sub">Four fronts of visibility improved this quarter — new members, attendance, retention, and finance.</p>
-  <div class="before-impact">
-    <div><div class="label">Before</div><p>Recurring reports required repeated manual updates and important information was split across separate tools.</p></div>
-    <div class="improved"><div class="label">What I improved</div><p>I connected, automated, and reorganised the core reporting workflows while introducing historical and intelligence views.</p></div>
-    <div class="impact"><div class="label">Impact</div><p>Reporting became faster, more consistent, easier to interpret, and more useful for follow-up and management decisions.</p></div>
-  </div>
-  <div class="grid-cards">
-    <div class="card">
-      <h3>New Member & Daily Numbers</h3>
-      <ul>
-        <li>Built and refined the New Member Spreadsheet for sales, starts, rollover, and outcomes</li>
-        <li>Automated Daily Numbers off the New Member Spreadsheet</li>
-        <li>Corrected cancellation-date logic to align with Clubworx</li>
-        <li>Began future-start and urgent-member handling</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Attendance & Retention</h3>
-      <ul>
-        <li>Restructured attendance tracking with automated colour coding</li>
-        <li>Semi-automated Past 7 Days Attendance via Apps Script</li>
-        <li>Built an Attendance Dashboard: Sleepers, Fringe, Engaged</li>
-        <li>Daily Drive-folder checks; weekly/monthly historical views</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Member & Cancellation Intel</h3>
-      <ul>
-        <li>Created the Member Intelligence Spreadsheet</li>
-        <li>Built Cancellation Analysis and Churn Analysis reporting</li>
-        <li>Added both to the Assistant 2.0 resource page</li>
-        <li>Reviewed plan classification for AutoPay accuracy</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Financial & Management</h3>
-      <ul>
-        <li>Prepared an April / YTD snapshot: revenue, margins, cash, debt</li>
-        <li>Flagged membership revenue strength vs. cost movements</li>
-        <li>Supported MYOB reporting through the transition period</li>
-        <li>Began Xero setup and located the Management Report pathway</li>
-      </ul>
-    </div>
-  </div>
-  <div class="impact-banner"><strong>Improvement:</strong> Raw operational data became management visibility — with better automation, clearer definitions, and stronger decision context.</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 03 ◆</span></div>
-
-<!-- ROUND 4 : SYSTEMS & SOPs -->
-<section class="round alt" data-round="4" data-title="Systems, SOPs & Continuity">
-  <div class="eyebrow"><span class="tag">ROUND 04</span><div class="rule"></div></div>
-  <h2 class="round-title">Systems & <span class="accent">Continuity.</span></h2>
-  <p class="round-sub">Developed and continuously refined through Melissa's instructions, feedback, and operational knowledge—with the shared goal of making critical work easier to understand, repeat, and hand over.</p>
-  <div class="before-impact">
-    <div><div class="label">Before</div><p>Several processes depended on verbal knowledge, recordings, or the person who normally completed the task.</p></div>
-    <div class="improved"><div class="label">What we improved</div><p>Using Melissa's ongoing instructions and feedback, I translated her operational processes into documented workflows, tutorials, playbooks, and centralised staff resources—then updated them as she clarified how the business should operate.</p></div>
-    <div class="impact"><div class="label">Impact</div><p>Processes became easier to teach, repeat, hand over, and recover when a team member is unavailable.</p></div>
-  </div>
-  <ul class="punchlist">
-    <li>Drafted five initial operating procedures, then refined and expanded them as Melissa provided further instructions and real operational examples.</li>
-    <li>Documented Melissa's required workflows for memberships expiring within seven days and suspensions being lifted.</li>
-    <li>Built the New Member Spreadsheet SOP as the process evolved, incorporating Melissa's clarification of dates, rollover stages, exceptions, and team responsibilities.</li>
-    <li>Created video tutorials for adding new members and using operational resources.</li>
-    <li>Drafted the Newbie Playbook and revised Newbie Protocol with supporting videos, ready for Melissa's continued review and refinement.</li>
-    <li>Began centralising links, tools, and intelligence resources in the staff portal / Assistant 2.0.</li>
-    <li>Standardised team email signatures with logo and clickable links; set up personalised files for the team.</li>
-  </ul>
-  <blockquote class="corner">These systems were not created in isolation. Melissa's continued feedback and instructions shaped the processes, while I focused on translating them into clearer, repeatable resources and refining them as the business evolved.</blockquote>
-  <div class="impact-banner"><strong>Ongoing commitment:</strong> I will continue absorbing Melissa's feedback, updating the documentation, and ensuring every automated spreadsheet has a clear manual procedure and accessible backup process.</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 04 ◆</span></div>
-
-<!-- ROUND 5 : MARKETING & COMMS -->
-<section class="round dark" data-round="5" data-title="Marketing, Leads & Communications">
-  <div class="eyebrow"><span class="tag">ROUND 05</span><div class="rule"></div></div>
-  <h2 class="round-title">Marketing & <span class="accent">Comms.</span></h2>
-  <p class="round-sub">Marketing oversight improved from checking activity to assessing lead quality, conversion, location, and campaign health.</p>
-  <div class="before-impact">
-    <div><div class="label">Before</div><p>Ad reviews focused more heavily on campaign activity and headline lead numbers.</p></div>
-    <div class="improved"><div class="label">What I improved</div><p>I introduced structured daily reviews, deeper lead analysis, repeatable AI-assisted evaluation, and earlier campaign intervention.</p></div>
-    <div class="impact"><div class="label">Impact</div><p>Lead quality strengthened, underperformance was identified sooner, and campaign decisions became more evidence-based.</p></div>
-  </div>
-  <div class="two-col">
-    <div>
-      <h3 style="font-family:'Barlow Condensed',sans-serif;color:var(--canvas);margin-bottom:10px;font-size:1.1rem;">Meta Ads Review</h3>
-      <ul class="punchlist">
-        <li>Built a Claude skill for Urban Muaythai's daily Meta review method</li>
-        <li>Turned off an underperformer with sub-1% CTR / link CTR</li>
-        <li>Confirmed a lead from the female-avatar campaign; refined the male-avatar campaign</li>
-        <li>Monitored location quality, Advantage+ behaviour, and campaign deterioration over time</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="font-family:'Barlow Condensed',sans-serif;color:var(--canvas);margin-bottom:10px;font-size:1.1rem;">Email & Nurture</h3>
-      <ul class="punchlist">
-        <li>Drafted member emails, prospect nurture, referral, event, and campaign comms</li>
-        <li>Built reusable Clubworx email templates</li>
-        <li>Responded directly to member survey feedback with what's changing</li>
-        <li>Supported cancellation and renewal communications</li>
-        <li>Supported Thailand Tour payment reminders and corrections</li>
-      </ul>
-    </div>
-  </div>
-  <div class="impact-banner"><strong>Client-observed impact:</strong> “The leads have been much stronger since you have been reviewing them daily; I don't want this to drop off.”</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 05 ◆</span></div>
-
-<!-- ROUND 6 : WINTER WEAPON -->
-<section class="round alt" data-round="6" data-title="Winter Weapon Campaign">
-  <div class="eyebrow"><span class="tag">ROUND 06</span><div class="rule"></div></div>
-  <h2 class="round-title">Winter Weapon <span class="accent">Campaign.</span></h2>
-  <p class="round-sub">Full campaign infrastructure — from registration to reward tracking.</p>
-  <div class="before-impact">
-    <div><div class="label">Before</div><p>The campaign had multiple moving parts across planning, registration, design, communications, missions, points, and rewards.</p></div>
-    <div class="improved"><div class="label">What I improved</div><p>I organised those parts into one operating structure supported by schedules, templates, trackers, content, and walkthroughs.</p></div>
-    <div class="impact"><div class="label">Impact</div><p>Campaign execution and reward progress became easier to coordinate, communicate, and monitor.</p></div>
-  </div>
-  <div class="stat-row">
-    <div class="stat"><div class="num">27</div><div class="lab">Members hit shorts tier</div></div>
-  </div>
-  <ul class="punchlist">
-    <li>Cleaned and organised the campaign plan and implementation checklist.</li>
-    <li>Coordinated the registration form, QR code, poster template, and final poster.</li>
-    <li>Built and revised the campaign schedule; created the Winter Weapon Tracker and a walkthrough video.</li>
-    <li>Produced teaser graphics, Instagram post and Story drafts.</li>
-    <li>Supported weekly mission emails, result updates, mental-health awareness messaging, and video content.</li>
-    <li>Updated attendance and Bingo points; built an interactive tracker for reward progress.</li>
-    <li>27 participants had reached the shorts tier and were progressing toward the water-bottle tier at the time of review.</li>
-  </ul>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 06 ◆</span></div>
-
-<!-- ROUND 7 : ACADEMY -->
-<section class="round dark" data-round="7" data-title="Urban Muaythai Academy Resources">
-  <div class="eyebrow"><span class="tag">ROUND 07</span><div class="rule"></div></div>
-  <h2 class="round-title">Academy <span class="accent">Resources.</span></h2>
-  <p class="round-sub">An instruction-led work in progress that begins translating Melissa's future vision for Urban Muaythai into resources that can be reviewed, tested, and refined.</p>
-  <div class="before-impact">
-    <div><div class="label">The Vision</div><p>Melissa provided the direction for three connected stages: Kids Academy, Teens Academy, and the Development Squad.</p></div>
-    <div class="improved"><div class="label">My contribution so far</div><p>Following her instructions, I converted the supplied concepts and source documents into working handbook, website, and Progress Passport drafts.</p></div>
-    <div class="impact"><div class="label">Current position</div><p>The resources are not final. They provide a tangible starting point for Melissa to review, refine, and shape as Urban Muaythai's future Academy vision develops.</p></div>
-  </div>
-  <div class="grid-cards">
-    <div class="card"><h3>Working Handbook Draft</h3><p>Prepared an HTML and PDF interpretation of the supplied Kids Academy direction for Melissa's review.</p></div>
-    <div class="card"><h3>Progress Passport Concept</h3><p>Created an initial attendance, progression, and Academy Stars concept that remains open to operational refinement.</p></div>
-    <div class="card"><h3>Connected Pathway Drafts</h3><p>Built early web drafts for the Kids Academy, Teens Academy, and Development Squad to help visualise how the future pathway could connect.</p></div>
-  </div>
-  <div class="impact-banner"><strong>My commitment:</strong> This work is based on Melissa's instructions and vision. I am ready to follow her feedback, make every requested refinement, and continue developing the resources until they accurately represent the future direction of Urban Muaythai.</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 07 ◆</span></div>
-
-<!-- ROUND 8 : JUDGES' SCORECARD -->
-<section class="round alt" data-round="8" data-title="The Judges' Scorecard">
-  <div class="eyebrow"><span class="tag">ROUND 08</span><div class="rule"></div></div>
-  <h2 class="round-title">The Judges' <span class="accent">Scorecard.</span></h2>
-  <p class="round-sub">Client feedback from across the quarter.</p>
-  <blockquote class="corner">"You are doing a fantastic job picking things up extremely quick."<cite>MELISSA — EARLY ONBOARDING</cite></blockquote>
-  <blockquote class="corner">"WOW, I'm excited to have a look at it all. A day to move the needle forward on the business!"<cite>MELISSA — 1 JUNE, ON THE AUTOMATION / PLAYBOOK / REPORTING WORK</cite></blockquote>
-  <blockquote class="corner">"The leads have been much stronger since you have been reviewing them daily; I don't want this to drop off."<cite>MELISSA — ON THE META ADS PROCESS</cite></blockquote>
-  <blockquote class="corner">"I love the LOGO!!!! This looks great... I'm pretty happy with that."<cite>MELISSA — SLACK, 9 JULY, ON THE KIDS ACADEMY PROGRESS PASSPORT DESIGN</cite></blockquote>
-  <blockquote class="corner">"This is great. Can you also tell me how many active members..."<cite>MELISSA — EMAIL, 29 JUNE, ON THE CANCELLATION ANALYSIS REPORT</cite></blockquote>
-  <blockquote class="corner">"Ok great. I'm having Harry use this report today and go through 1 by 1..."<cite>MELISSA — EMAIL, 16 JUNE, ON THE RETENTION INTELLIGENCE REPORT</cite></blockquote>
-  <blockquote class="corner">"This looks great."<cite>MELISSA — EMAIL, 11 JUNE, ON THE REFERRAL PROGRAM POINTS TRACKER</cite></blockquote>
-  <blockquote class="corner">"Yeah, that sounds great. Let's get that rolled out."<cite>MELISSA — EMAIL, 7 JULY, ON THE BRANDED EMAIL SIGNATURE IDEA</cite></blockquote>
-  <blockquote class="corner">"Thanks Ram. Hope you're feeling better soon."<cite>MELISSA — SLACK, 14 JULY</cite></blockquote>
-  <p style="font-family:'Barlow Condensed',sans-serif;color:var(--bone);font-size:1.05rem;margin-top:20px;">Her willingness to help solve the phone/access issue also showed how operationally important maintaining the review process was to her.</p>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 08 ◆</span></div>
-
-<!-- ROUND 9 : GROWTH & PROCESS STRENGTHENING -->
-<section class="round dark" data-round="9" data-title="Growth & Process Strengthening">
-  <div class="eyebrow"><span class="tag">ROUND 09</span><div class="rule"></div></div>
-  <h2 class="round-title">Growth & <span class="accent">Stronger Practice.</span></h2>
-  <p class="round-sub">The lessons I converted into clearer checks, better communication, and more dependable processes.</p>
-  <ul class="punchlist">
-    <li>Strengthened the approval and timing checks used for Red/Orange Flag outreach.</li>
-    <li>Added more deliberate verification for payment amounts and member communications.</li>
-    <li>Reconciled cancellation-date logic with Clubworx and corrected the related reporting.</li>
-    <li>Improved communication around blockers, access issues, and availability.</li>
-    <li>Made backup instructions a required companion to automation and system improvements.</li>
-    <li>Introduced stronger definition checks for rollover, AutoPay, dates sold, and attendance cohorts before finalising reports.</li>
-  </ul>
-  <div class="impact-banner"><strong>Improvement:</strong> Feedback was converted into process changes, making the work more accurate, transparent, and resilient over time.</div>
-</section>
-
-<div class="rope"><span class="bell">◆ END ROUND 09 ◆</span></div>
-
-<!-- ROUND 10 : NEXT QUARTER GAMEPLAN -->
-<section class="round alt" data-round="10" data-title="90-Day Gameplan">
-  <div class="eyebrow"><span class="tag">ROUND 10</span><div class="rule"></div></div>
-  <h2 class="round-title">The Next <span class="accent">90 Days.</span></h2>
-  <p class="round-sub">28 July–27 October 2026: make the most valuable systems reliable, documented, measurable, and easier for Melissa and the team to use—without compromising daily operations.</p>
-
-  <div class="impact-banner"><strong>Quarter outcome:</strong> By 27 October, Urban Muaythai will have a dependable operating rhythm for its critical workflows, clearer member and retention visibility, a stable marketing and financial review cadence, and Academy drafts that have progressed in line with Melissa's feedback.</div>
-
-  <div class="grid-cards" style="margin-top:28px;">
-    <div class="card">
-      <h3>MONTH 1 — Stabilise the Foundation</h3>
-      <p class="mono" style="color:var(--gold);font-size:0.72rem;margin-bottom:10px;">28 JULY–31 AUGUST</p>
-      <ul>
-        <li>Agree with Melissa on the critical-workflow list and the order of priority.</li>
-        <li>Complete accessible SOP pages for the five highest-risk recurring workflows, including manual backup steps.</li>
-        <li>Complete adult / U18 segmentation in attendance reporting.</li>
-        <li>Add clear future-start and urgent-member views to the New Member workflow.</li>
-        <li>Establish the Xero monthly-reporting checklist, owner, inputs, and delivery date.</li>
-        <li>Standardise the daily Meta Ads review template and exception log.</li>
-        <li>Measure the current time required to prepare recurring reports so improvement can be demonstrated.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>MONTH 2 — Connect and Embed</h3>
-      <p class="mono" style="color:var(--gold);font-size:0.72rem;margin-bottom:10px;">1–30 SEPTEMBER</p>
-      <ul>
-        <li>Bring Member Intelligence, Cancellation Analysis, Retention Intelligence, attendance, and net growth into one weekly management view.</li>
-        <li>Document the remaining agreed high-priority workflows and add short videos where a visual walkthrough is more useful.</li>
-        <li>Create a retention action tracker with owner, next action, due date, and outcome.</li>
-        <li>Build a small reusable email-nurture library for the highest-value member and prospect journeys.</li>
-        <li>Run the first full Xero management-report cycle and resolve any gaps.</li>
-        <li>Complete one consolidated Academy refinement cycle after Melissa provides feedback; keep all work aligned with her vision and instructions.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>MONTH 3 — Prove and Hand Over</h3>
-      <p class="mono" style="color:var(--gold);font-size:0.72rem;margin-bottom:10px;">1–27 OCTOBER</p>
-      <ul>
-        <li>QA the critical workflows against live use and correct unclear, outdated, or missing steps.</li>
-        <li>Create one simple portal index for SOPs, videos, dashboards, reports, owners, and backup procedures.</li>
-        <li>Ask another team member to complete one critical workflow using only the documentation, then improve it from their feedback.</li>
-        <li>Deliver a stable monthly management pack covering the agreed member, retention, marketing, and financial views.</li>
-        <li>Compare report-preparation time with the August baseline and record the efficiency gained.</li>
-        <li>Hold a three-month review with Melissa: what is working, what still creates friction, and what should be prioritised next.</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3 style="font-family:'Barlow Condensed',sans-serif;color:var(--canvas);font-size:1.45rem;margin:38px 0 14px;">Quarter Success Scorecard</h3>
-  <div class="grid-cards">
-    <div class="card"><h3>Documentation</h3><p>100% of the critical workflows agreed with Melissa have a current SOP, owner, link, and manual backup procedure.</p></div>
-    <div class="card"><h3>Reporting Reliability</h3><p>At least 11 of 12 weekly management updates delivered on schedule, with no unexplained Clubworx-to-report variances left unresolved.</p></div>
-    <div class="card"><h3>Member Follow-Up</h3><p>Every future-start or urgent member reviewed weekly has a visible owner, next action, and status.</p></div>
-    <div class="card"><h3>Efficiency</h3><p>Establish an August baseline, then target a realistic 25% reduction in recurring report-preparation time by October.</p></div>
-    <div class="card"><h3>Marketing Discipline</h3><p>Meta Ads reviewed each working day when access is available; material issues, actions, and outcomes recorded consistently.</p></div>
-    <div class="card"><h3>Business Continuity</h3><p>At least one critical workflow successfully completed by another team member using the documentation alone.</p></div>
-    <div class="card"><h3>Financial Rhythm</h3><p>Xero management reporting delivered monthly using an agreed checklist, timeline, and review process.</p></div>
-    <div class="card"><h3>Academy Alignment</h3><p>Requested refinements completed against consolidated Melissa feedback, with the drafts clearly maintained as an evolving future vision.</p></div>
-  </div>
-
-  <div class="before-impact" style="margin-top:30px;">
-    <div><div class="label">Capacity rule</div><p>Protect daily non-negotiables and limit improvement work to two active projects at a time.</p></div>
-    <div class="improved"><div class="label">Alignment rule</div><p>Use a short fortnightly priority check with Melissa to confirm what stays, changes, pauses, or moves next.</p></div>
-    <div class="impact"><div class="label">Definition of done</div><p>A project is complete only when it works in live use, is documented, linked in the portal, and has a clear owner or backup.</p></div>
-  </div>
-</section>
-
-<!-- CLOSING -->
-<section id="closing">
-  <div class="display-line">ONE TEAM,<br><span class="red">ONE FIGHT.</span></div>
-  <p>Three months in, I have moved from learning Urban Muaythai's daily operation to improving how the business tracks members, reports performance, manages retention, reviews marketing, documents processes, and delivers campaigns. I am proudest of the improvements that now continue beyond a single task: automated reporting, stronger member and cancellation intelligence, the Meta Ads review workflow, reusable playbooks and SOPs, and coordinated campaign infrastructure. I have also started translating Melissa's future Academy vision into working drafts, and I am ready to follow every refinement as that vision develops. Next quarter, my focus is to make every system simpler, better documented, and easier for the whole team to use.</p>
-  <div class="sig">GERAMEL "RAM" TAPIS — SUPER SIDEKICK</div>
-</section>
-
-<script>
-  const rounds = Array.from(document.querySelectorAll('.round[data-round]'));
-  const totalRounds = rounds.length;
+  <div class="lights" id="tracker-lights" aria-hidden="true"></div>
+  <div class="tracker-links"><a href="#contents">All rounds</a><a href="#hero">Back to top</a></div>
+</aside><div id="hero"><div class="corners"><span>Prepared for Melissa Walsh</span><span>Urban Army — One Team, One Fight</span></div><h1>PROGRESS.<br>OWNERSHIP.<br><span class="red">REVIEW.</span></h1><div class="sub">From training to practical operational support: the systems, reporting, communications, and resources I have developed with Urban Muaythai.</div><div class="meta"><div>Journey covered<strong>6 Apr–15 Sep 2026</strong></div><div>Client work began<strong>27 April 2026</strong></div><div>Prepared by<strong>Geramel “Ram” Tapis</strong></div></div><div class="hero-actions"><a class="action primary" href="#round-1">Read the review ↓</a><a class="action" href="#round-10">Next priorities</a><button class="action" id="print-review" type="button" hidden>Print / Save PDF</button></div><p class="review-note">Prepared for discussion with Mel. Sources include relevant Slack conversations, Gmail threads, and Drive documents through 15 September. Source links require the appropriate account access. Completed delivery, work awaiting review, and proposed next steps are distinguished throughout.</p><div class="scroll-cue">10 rounds · Journey, contribution, feedback &amp; next steps</div></div><nav id="contents" aria-labelledby="contents-title"><h2 id="contents-title">The review, round by round.</h2><p>Read the story or jump to a contribution, source, or next priority.</p><ol><li><a href="#round-1"><span class="index">01</span><span>The journey &amp; contribution</span></a></li><li><a href="#round-2"><span class="index">02</span><span>Daily operations &amp; retention</span></a></li><li><a href="#round-3"><span class="index">03</span><span>Reporting &amp; business visibility</span></a></li><li><a href="#round-4"><span class="index">04</span><span>SOPs &amp; team continuity</span></a></li><li><a href="#round-5"><span class="index">05</span><span>Marketing &amp; communications</span></a></li><li><a href="#round-6"><span class="index">06</span><span>Winter Weapon &amp; campaign handover</span></a></li><li><a href="#round-7"><span class="index">07</span><span>Academy resources</span></a></li><li><a href="#round-8"><span class="index">08</span><span>Client &amp; team feedback</span></a></li><li><a href="#round-9"><span class="index">09</span><span>Lessons &amp; quality checks</span></a></li><li><a href="#round-10"><span class="index">10</span><span>Next priorities through 27 October</span></a></li></ol></nav><section id="round-1" class="round dark" data-round="1" data-title="The journey &amp; contribution" aria-labelledby="round-title-1" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 01</span><div class="rule"></div></div><h2 id="round-title-1" class="round-title">From training to <span class="accent">ownership.</span></h2><p class="round-sub">6 April–15 September 2026 · Client work from 27 April</p><div class="grid-cards"><article class="card"><h3>6–17 April · Training</h3><p>I started on 6 April and completed my training period on 17 April.</p></article><article class="card"><h3>17–27 April · Client matching</h3><p>I waited for a client match before beginning my placement.</p></article><article class="card"><h3>27 April · Started with Mel</h3><p>I began working with Mel at Urban Muaythai. The client achievements in this review start from this date.</p></article></div><div class="impact-banner"><strong>Timeline source:</strong> These three milestones are confirmed by me. Training and client matching are separate from client delivery.</div><ul class="punchlist"><li>Since joining Mel, I have developed from learning daily operations into building reporting, follow-up tools, documentation, campaign resources, and member communications.</li><li>My strongest evidenced contribution is making information usable: attendance imports, retention lists, weekly reports, coach dashboards, and clearer handover instructions.</li><li>By September, the work also included pricing preparation, Academy resources, Winter Weapon handover, and planning the next communications cycle.</li></ul><div class="grid-cards"><article class="card"><h3>12 monthly tabs</h3><p>Attendance tracker delivered with CSV import, dashboard views, and a sync log.</p></article><article class="card"><h3>10 email templates</h3><p>Kickstarter templates placed in Clubworx by 27 August.</p></article><article class="card"><h3>2 Academy web resources</h3><p>Kids and Teens versions delivered with supporting resources on 17 August.</p></article><article class="card"><h3>Coach reporting shared</h3><p>Dashboard shared with staff on 4 September and reported ready again on 11 September.</p></article></div><details class="evidence"><summary>View supporting sources (5)</summary><ul><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f7d65adbdf7c77">Attendance automation delivery · 20 July</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1787818150799709">Ten Kickstarter templates in Clubworx · 27 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a00dc15a2cae706">Kids and Teens resources delivered · 17 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/C098V47STPF/p1788499208745359">Coach dashboard shared with staff · 4 September</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1789101495311669">Coach dashboard ready · 11 September</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 01 ◆</span></div>
+<section id="round-2" class="round alt" data-round="2" data-title="Daily operations &amp; retention" aria-labelledby="round-title-2" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 02</span><div class="rule"></div></div><h2 id="round-title-2" class="round-title">Make follow-up <span class="accent">visible.</span></h2><p class="round-sub">Practical support for member administration, prioritisation, and team action.</p><ul class="punchlist"><li>I supported the daily Clubworx and inbox workload, member records, outreach replies, and recurring reporting. Start-of-day updates made priorities and dependencies visible to Mel.</li><li>I developed the Orange Flag workflow around a weekly import, repeat flags, Head Coach review, and approved outreach. Kickstarter members require personal calls; sponsored members are excluded under the SOP.</li><li>The retention report reached practical use: on 16 June, Mel said Harry would work through it member by member and feed back on accuracy.</li><li>On 3 August, I provided a contact-method dropdown and walkthrough to replace manual green highlighting in reach-out tracking. This made the recorded action more explicit.</li><li>On 31 August, I reported that outreach was waiting for Harry’s review, preserving the approval step instead of treating a prepared list as completed contact.</li></ul><div class="impact-banner"><strong>Current-day boundary:</strong> The 15 September update is a start-of-day plan. Its listed tasks are not counted here as completed work.</div><details class="evidence"><summary>View supporting sources (5)</summary><ul><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a0a28fc56facc5f">Start-of-day plan · 15 September</a></li><li><a href="https://docs.google.com/document/d/1TISibWPolDBBqOUiz6C3wtb2myu-2iUcS8wGSb8gS7o/edit">Orange Flag SOP · updated 29 July</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ecdc42c2eba354">Mel confirms Harry will use retention report · 16 June</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fc63768f205f24">Reach-out tracking walkthrough · 3 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1788132604590359">Outreach awaiting Harry’s review · 31 August</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 02 ◆</span></div>
+<section id="round-3" class="round dark" data-round="3" data-title="Reporting &amp; business visibility" aria-labelledby="round-title-3" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 03</span><div class="rule"></div></div><h2 id="round-title-3" class="round-title">Turn records into <span class="accent">decisions.</span></h2><p class="round-sub">Reporting expanded from member follow-up into attendance, cancellations, coach performance, and pricing preparation.</p><div class="grid-cards"><article class="card"><h3>Attendance automation · July</h3><p>I delivered a tracker with 12 monthly tabs, CSV import and sync, day/week/month views, class-specific attendance thresholds, and a sync log. The reporting week runs Friday–Thursday.</p></article><article class="card"><h3>Cancellation intelligence · June</h3><p>I prepared an analysis by cancellation reason, age, and tenure. It used historical records, including periods before I joined; those records are context, not work completed during my employment.</p></article><article class="card"><h3>Coach reporting · September</h3><p>I shared the Coach KPI Dashboard with staff on 4 September. It brings scheduled and delivered activity, targets, and status into a common view. I reported it ready on 11 September.</p></article><article class="card"><h3>Price-rise preparation · August</h3><p>I mapped membership fees, agreement timing, and transition cases ahead of the planned 21 September change. The 14 August email described 352 mapped records; the refreshed tracker later contained 354. These are dated preparation snapshots.</p></article></div><ul class="punchlist"><li>Weekly numbers and rollover reporting continued through the completed week reported on 11 September. Member outcomes belong to the team and business; I contributed the reporting and follow-up visibility.</li><li>The value demonstrated is a repeatable reporting structure. A measured reduction in preparation time has not yet been established.</li></ul><div class="impact-banner"><strong>Pricing status:</strong> The change is future-dated as of this review. Projected revenue is not realised revenue, and the tracker needs a calculation check before its uplift is relied upon.</div><details class="evidence"><summary>View supporting sources (8)</summary><ul><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f7d65adbdf7c77">Attendance automation delivery · 20 July</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f11e98a540deae">Cancellation analysis discussion · 29 June</a></li><li><a href="https://urbanmuaythai.slack.com/archives/C098V47STPF/p1788499208745359">Coach dashboard shared with staff · 4 September</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1789101495311669">Coach dashboard ready · 11 September</a></li><li><a href="https://docs.google.com/spreadsheets/d/1ErW6gWeSW8ykYNU-7yQFbEMFYY_vGFM_zDrgWTTDi8Q/edit">Coach KPI Dashboard</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fff2063e0aa1ff">Price-rise mapping prepared · 14 August</a></li><li><a href="https://docs.google.com/spreadsheets/d/1hpbQQR5KHF83QEviblqNmHnsSP4TG6WsfjmW075AIMY/edit">Price-rise tracker · refreshed 20 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a08e25a25542d50">Weekly numbers and rollover report · 11 September</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 03 ◆</span></div>
+<section id="round-4" class="round alt" data-round="4" data-title="SOPs &amp; team continuity" aria-labelledby="round-title-4" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 04</span><div class="rule"></div></div><h2 id="round-title-4" class="round-title">Build processes the <span class="accent">team can use.</span></h2><p class="round-sub">Documentation translates working knowledge into steps, ownership, and handover.</p><div class="grid-cards"><article class="card"><h3>Orange Flag workflow</h3><p>Documented import, Head Coach review, outreach rules, exclusions, and escalation. The process distinguishes a ready list from approval to send.</p></article><article class="card"><h3>Newbie Protocol V2</h3><p>Adapted the existing Kickstarter handbook into a revised protocol for review. This builds on the previous manager’s work rather than claiming the original process as mine.</p></article><article class="card"><h3>Bring A Warrior</h3><p>Prepared referral guidance covering front-desk intake, points, redemption, ownership, and member templates.</p></article><article class="card"><h3>Walkthroughs and shared resources</h3><p>Paired reach-out changes with a walkthrough and shared reporting links with staff to support practical use.</p></article></div><div class="impact-banner"><strong>Finance remains in progress:</strong> I supported the Xero transition and reconciliation work. On 7 September, missing cash inputs were still a dependency; a fully closed and stable monthly finance pack is not yet evidenced.</div><details class="evidence"><summary>View supporting sources (6)</summary><ul><li><a href="https://docs.google.com/document/d/1TISibWPolDBBqOUiz6C3wtb2myu-2iUcS8wGSb8gS7o/edit">Orange Flag SOP · updated 29 July</a></li><li><a href="https://docs.google.com/document/d/1cRwa86qCwg1Gl6hF9Fvbs13cCE2MaEPPVMTxBtO7jG8/edit">Newbie Protocol V2 · 1 June</a></li><li><a href="https://docs.google.com/document/d/1VH6ySpJhie8fEAWj-gSCApiTG4RWCPNNoeYMloW3vmg/edit">Bring A Warrior referral SOP · updated 12 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fc63768f205f24">Reach-out tracking walkthrough · 3 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/C098V47STPF/p1788499208745359">Coach dashboard shared with staff · 4 September</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1788756250108899">Xero reconciliation and missing cash inputs · 7 September</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 04 ◆</span></div>
+<section id="round-5" class="round dark" data-round="5" data-title="Marketing &amp; communications" aria-labelledby="round-title-5" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 05</span><div class="rule"></div></div><h2 id="round-title-5" class="round-title">Create, review, <span class="accent">follow through.</span></h2><p class="round-sub">Campaign support and reusable communications, with clear delivery and approval boundaries.</p><ul class="punchlist"><li>I supported Meta campaign review and lead-quality monitoring. Mel reported three leads from the female campaign on 18 June.</li><li>The snapshot I sent on 10 August reported 78 leads and $2,995 spend for 11 July–9 August, with rounded cost per lead of $38 versus $46 in the prior comparison. These are reported campaign results, not independently audited acquisition or revenue impact.</li><li>By 27 August, all 10 Kickstarter templates were in Clubworx. Template availability is evidenced; a fully launched automation is not.</li><li>On 18 August, I introduced a shared event-media process for photos, videos, results, and feedback, labelled by event and date.</li><li>On 8 September, I shared a dedicated Beach Olympics page and asked Harry to review the details for the weekly email. He responded positively on 9 September, including after checking the email.</li><li>The 14 September MediaVerse recap proposed a review, decision, creation, distribution, and learning cycle. The cadence still needed Mel’s input.</li><li>The On The Rise plan outlines 15 posts, with remaining production dependent on approval of dates, imagery, and style. It is a plan, not 15 published posts.</li></ul><details class="evidence"><summary>View supporting sources (6)</summary><ul><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1781759419300209">Mel reports leads from the female campaign · 18 June</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fe9fa5f69084f1">Meta Ads snapshot, 11 July–9 August · sent 10 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1787818150799709">Ten Kickstarter templates in Clubworx · 27 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/C0BQX7HRYR0/p1787039049748919">Shared event-media process · 18 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a09e37091199b7e">MediaVerse meeting recap and proposed cadence · 14 September</a></li><li><a href="https://docs.google.com/document/d/1tj7huOuNG7bmQHJuV7ot5veHKuhlG0qVcbXV1K3YMWI/edit">On The Rise 15-post plan · for approval</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 05 ◆</span></div>
+<section id="round-6" class="round alt" data-round="6" data-title="Winter Weapon &amp; campaign handover" aria-labelledby="round-title-6" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 06</span><div class="rule"></div></div><h2 id="round-title-6" class="round-title">Carry the campaign <span class="accent">through.</span></h2><p class="round-sub">The later work centred on reward reconciliation, size collection, handover, and lessons for the next campaign.</p><ul class="punchlist"><li>I reconciled changing reward lists and followed up on shorts sizes as the campaign moved toward ordering and distribution.</li><li>On 14 September, I sent the Winter Weapon list to Jakob for handover. This supports a completed handoff, not confirmation that every member collected a prize.</li><li>I drafted the Winter Weapon 2027 playbook with clearer registration, evidence requirements, size deadlines, owners, and a final reconciliation step. Dates, prizes, and budget remain for Mel’s review.</li></ul><div class="impact-banner"><strong>Why the original “27” is removed:</strong> Later messages revised both totals and allocations. The July and August figures are different snapshots, not one settled final count. This review recognises the coordination work without presenting an unverified total as final.</div><details class="evidence"><summary>View supporting sources (6)</summary><ul><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fb731d55dd7db1">Initial Winter Weapon count · 31 July</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fc54cc41cbfcfa">Revised Winter Weapon count · 3 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1785744073836659">Mel’s reward allocation correction · 3 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1785998824314209">Later size reconciliation · 6 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0AVB4X64LE/p1789364366716419">Winter Weapon list handed to Jakob · 14 September</a></li><li><a href="https://docs.google.com/document/d/1McGhiqy9gUItViTvwC6VUJulciOX85wEDEwaDnOsqAU/edit">Winter Weapon 2027 playbook · draft for Mel</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 06 ◆</span></div>
+<section id="round-7" class="round dark" data-round="7" data-title="Academy resources" aria-labelledby="round-title-7" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 07</span><div class="rule"></div></div><h2 id="round-title-7" class="round-title">Translate Mel’s vision <span class="accent">into resources.</span></h2><p class="round-sub">My contribution is the implementation and refinement of Mel’s Academy direction.</p><div class="grid-cards"><article class="card"><h3>July · Progress Passport</h3><p>I developed the passport concept into reviewable resources. Mel liked the logo and proposed take-home passports plus printable grading cards, with minor wording changes.</p></article><article class="card"><h3>August · Kids and Teens delivery</h3><p>On 17 August, I sent Kids and Teens Canva and web resources, aligned handbooks and PDFs, social links, mobile refinements, and the Teens pathway.</p></article><article class="card"><h3>Next · Consolidated sign-off</h3><p>On 7 August, Mel praised the improved progress-card layout while requesting corrections to counts, labels, and values. I shared a revised Canva version for review on 10 August. The resources have progressed beyond an initial concept. Full programme launch and final approval are not established by the delivery email.</p></article></div><div class="hero-actions"><a class="action" href="https://urbanmuaythai.github.io/Kids-Academy/">Kids Academy resource ↗</a><a class="action" href="https://urbanmuaythai.github.io/Teen-Academy/">Teen Academy resource ↗</a></div><details class="evidence"><summary>View supporting sources (2)</summary><ul><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1783583950407079">Mel’s Progress Passport feedback · 9 July</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a00dc15a2cae706">Kids and Teens resources delivered · 17 August</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 07 ◆</span></div>
+<section id="round-8" class="round alt" data-round="8" data-title="Client & team feedback" aria-labelledby="round-title-8" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 08</span><div class="rule"></div></div><h2 id="round-title-8" class="round-title">Feedback that <span class="accent">shaped the work.</span></h2><p class="round-sub">Direct recognition from Mel and Harry, plus the specific corrections and requests that guided improvement.</p><blockquote class="corner">“Thats attention to detail, which is perfect.”<cite>MEL · 7 JULY · PERSONALISED OUTREACH · <a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f3b85c0c18e7aa">READ SOURCE ↗</a></cite></blockquote><blockquote class="corner">“it’s good to get a solid base number to work from.”<cite>MEL · 15 JULY · AUTOPAY BASELINE · <a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f6382e4eaa6e2f">READ SOURCE ↗</a></cite></blockquote><blockquote class="corner">“I love the layout looks heaps better overall.”<cite>MEL · 7 AUGUST · ACADEMY PROGRESS CARDS · <a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1786059216096489">READ SOURCE ↗</a></cite></blockquote><blockquote class="corner">“The reporting this week is spot on”<cite>MEL · 14 AUGUST · WEEKLY REPORTING · <a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ffda98e38aef34">READ SOURCE ↗</a></cite></blockquote><blockquote class="corner">“Yes that is awesome Ram, just checked the email too looks good. Thank you”<cite>HARRY · 9 SEPTEMBER · BEACH OLYMPICS PAGE &amp; EMAIL · <a href="https://urbanmuaythai.slack.com/archives/D0B0C3UBD6V/p1788905514812549">READ SOURCE ↗</a></cite></blockquote><div class="impact-banner"><strong>A documented improvement cycle:</strong> On 15 July, Mel flagged that two-session memberships were being classified unfairly. I reported allowance-aware attendance rules live that day, and she responded positively. That sequence shows feedback translated into a concrete reporting change. <a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f64a7aaac9f02f">Read the exchange ↗</a></div><div class="feedback-register"><h3>Feedback register · 33 episodes</h3><p class="review-copy">Praise, corrections, approvals, and requests are shown together. Expand any entry for its context, follow-through, and source.</p><details class="feedback-entry"><summary><span class="feedback-date">2026-05-20 · Mel</span><strong>Orange Flag ownership</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Harry, not Jakob, should review the list; keep the Wednesday task separate from Pipeline Party and route Kickstarter members to calls.</p><p><strong>Follow-through / limit:</strong> Later SOP reflects Head Coach review and separate Kickstarter calls.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19e438104e42dd87">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-05-20 · Mel</span><strong>Cancellation definitions</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Exclude short-term memberships from cancellation totals and correct the negative-week narrative.</p><p><strong>Follow-through / limit:</strong> Correction requested; later reporting must retain consistent cohort definitions.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19e444203790c81b">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-05-21 · Mel</span><strong>Inbox and SOP handover</strong><span class="feedback-type">Revision request</span></summary><p><strong>Feedback:</strong> Keep the inbox focused on active conversations and record walkthrough videos alongside the SOPs she had updated.</p><p><strong>Follow-through / limit:</strong> Operating expectation; the request alone does not prove every walkthrough was completed.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19e47ae9753fae86">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-09 · Mel</span><strong>Email readability and turnaround</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> The draft had too much text in a small space and required phone zooming. She asked for one column, shorter copy, separate event channels, and faster completion.</p><p><strong>Follow-through / limit:</strong> Ram acknowledged the layout and distribution changes. Acknowledgement is not proof of the final send.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ea9551b0b78371">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-11 · Mel</span><strong>Referral tracker</strong><span class="feedback-type">Praise</span></summary><p><strong>Feedback:</strong> “This looks great” in response to the Referral Program Points Tracker.</p><p><strong>Follow-through / limit:</strong> Ram replied that the recording and redemption SOP had also been updated.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19eb43088d3b7ceb">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-15 · Mel</span><strong>Retention report</strong><span class="feedback-type">Positive review</span></summary><p><strong>Feedback:</strong> “Yes that looks more like what we are after.”</p><p><strong>Follow-through / limit:</strong> Confirms improved alignment with her reporting needs.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ecaf6529c80591">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-16 · Mel</span><strong>Retention check-ins</strong><span class="feedback-type">Team use</span></summary><p><strong>Feedback:</strong> She said Harry would work through the report one by one and report back on accuracy or changes.</p><p><strong>Follow-through / limit:</strong> Evidence of planned operational use, not confirmed completion of all calls.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ecdc42c2eba354">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-18 · Mel</span><strong>Female Meta campaign</strong><span class="feedback-type">Reported result</span></summary><p><strong>Feedback:</strong> Reported three leads from Ram’s female campaign and asked about the men’s campaign.</p><p><strong>Follow-through / limit:</strong> Client-reported early lead result; not a revenue or conversion claim.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1781759419300209">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-06-29 · Mel</span><strong>Cancellation intelligence</strong><span class="feedback-type">Praise + request</span></summary><p><strong>Feedback:</strong> “That’s great info.” She requested separate adult/U18 tenure analysis, then active-member counts in those bands.</p><p><strong>Follow-through / limit:</strong> Ram supplied follow-up breakdowns in the thread. Source figures were not independently audited.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f1182e1d2503cd">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-07 · Mel</span><strong>Personalised outreach</strong><span class="feedback-type">Praise + request</span></summary><p><strong>Feedback:</strong> “Thats attention to detail, which is perfect.” She asked to compare standard-template versus personalised messages and responses.</p><p><strong>Follow-through / limit:</strong> Ram proposed tracking message type and replies; Mel accepted the plan. Measured effectiveness remains unproven.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f3b85c0c18e7aa">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-07 · Mel</span><strong>Branded email signature</strong><span class="feedback-type">Approval</span></summary><p><strong>Feedback:</strong> “Yeah, that sounds great. Let’s get that rolled out.”</p><p><strong>Follow-through / limit:</strong> Approval to roll out; later setup issues required support.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f3b99e679aeaa2">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-08 · Jakob</span><strong>Email signature setup</strong><span class="feedback-type">Team use</span></summary><p><strong>Feedback:</strong> After initially reporting that setup did not work, Jakob confirmed he had it; his reply displayed the branded signature.</p><p><strong>Follow-through / limit:</strong> Concrete adoption evidence for one staff member, not the whole team.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f406d7f0dc0408">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-08 · Mel</span><strong>Mid-week management report</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> She remained confused about cancellations and specified five questions: cancels, completed rollovers, net direction, remaining pipeline, and sales.</p><p><strong>Follow-through / limit:</strong> Clear reporting brief. The later August reporting praise is a separate positive signal.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f408f6699d0040">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-09 · Mel</span><strong>Member payment SMS</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Reported that Thailand tour SMS messages contained incorrect amounts.</p><p><strong>Follow-through / limit:</strong> Feedback establishes the error; successful correction is not verified in this register.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1783578624683049">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-09 · Mel</span><strong>Progress Passport</strong><span class="feedback-type">Praise + request</span></summary><p><strong>Feedback:</strong> “I love the LOGO!!!! This looks great.” She suggested take-home passports and printable A5 grading cards, with minor wording changes.</p><p><strong>Follow-through / limit:</strong> Positive design feedback with practical revisions; not final Academy approval.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1783583950407079">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-15 · Mel</span><strong>Autopay baseline</strong><span class="feedback-type">Praise</span></summary><p><strong>Feedback:</strong> “it’s good to get a solid base number to work from.”</p><p><strong>Follow-through / limit:</strong> Acknowledged the membership cross-check and clearer base definition.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f6382e4eaa6e2f">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-15 · Mel</span><strong>Attendance categories</strong><span class="feedback-type">Correction → positive review</span></summary><p><strong>Feedback:</strong> Two-session memberships were being classified unfairly. Mel asked for allowance-aware reporting; Ram reported new rules live the same day, and she replied positively.</p><p><strong>Follow-through / limit:</strong> Documented response and positive acknowledgement. For example, two attendances on a two-class plan became Engaged.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f64a7aaac9f02f">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-24 · Mel</span><strong>Orange Flag reasons</strong><span class="feedback-type">Revision request</span></summary><p><strong>Feedback:</strong> Asked for a Head Coach notes column recording why members are removed from SMS, so the context can improve retention reporting.</p><p><strong>Follow-through / limit:</strong> Specific documentation requirement; avoid inferring full adoption from the request alone.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19f915258b6dffa9">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-31 · Mel</span><strong>Cancellation update</strong><span class="feedback-type">Praise</span></summary><p><strong>Feedback:</strong> “This is great” in response to the week-ending-30-July cancellation update.</p><p><strong>Follow-through / limit:</strong> Positive review of the update, not independent validation of every figure.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fb5f4ac49617d2">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-07-31 · Mel</span><strong>Low-attendance exceptions</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Remove zero-attendance classes on a day the gym was closed for a fight show.</p><p><strong>Follow-through / limit:</strong> Shows the need for closure exceptions; zero attendance is not automatically underperformance.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19fb5f485e3ce665">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-03 · Mel</span><strong>Winter Weapon artwork and rewards</strong><span class="feedback-type">Praise + correction</span></summary><p><strong>Feedback:</strong> Said the work looked great, requested better photo framing, and corrected the water-bottle allocation.</p><p><strong>Follow-through / limit:</strong> Keep praise alongside the allocation revision; do not freeze the earlier reward totals.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1785744073836659">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-07 · Mel</span><strong>Academy progress cards</strong><span class="feedback-type">Praise + correction</span></summary><p><strong>Feedback:</strong> “I love the layout looks heaps better overall.” She also corrected session counts, pathway labels, and the Focus value.</p><p><strong>Follow-through / limit:</strong> On 10 August she clarified the wording to remove; Ram shared the Canva revision for review. Final sign-off is not shown.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1786059216096489">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-13 · Harry</span><strong>Fighter dashboard</strong><span class="feedback-type">Praise + request</span></summary><p><strong>Feedback:</strong> Requested a more readable layout, weekly attendance, and dates unavailable. After Ram shared the dashboard approach, Harry said “that is awesome Ram, I like that”.</p><p><strong>Follow-through / limit:</strong> Positive response to a working approach. Ram still described linking and true-data work as ongoing.</p><a href="https://urbanmuaythai.slack.com/archives/D0B0C3UBD6V/p1786580538640039">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-14 · Mel</span><strong>Weekly reporting</strong><span class="feedback-type">Praise</span></summary><p><strong>Feedback:</strong> “The reporting this week is spot on”. She said the three emails gave her a good picture of what was happening.</p><p><strong>Follow-through / limit:</strong> Strong client feedback about reporting usefulness.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ffda98e38aef34">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-14 · Mel</span><strong>Membership fee interpretation</strong><span class="feedback-type">Praise + correction</span></summary><p><strong>Feedback:</strong> Liked the snapshot but challenged an average above the listed weekly fee, then asked about blank fees and confirmed the problem was reporting.</p><p><strong>Follow-through / limit:</strong> Ram corrected monthly/weekly interpretation and checked blank fields against Clubworx. No recovered-revenue claim.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ffda85c1f1b7d6">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-18 · Mel</span><strong>Adult grading templates</strong><span class="feedback-type">Praise</span></summary><p><strong>Feedback:</strong> “These are great email templates” for following up with members who had not responded.</p><p><strong>Follow-through / limit:</strong> Identifies a useful application; not proof every follow-up was sent.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1787031503147639">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-18 · Mel</span><strong>Email formatting</strong><span class="feedback-type">Revision request</span></summary><p><strong>Feedback:</strong> Asked to fix the heading and greeting because they were on the wrong line.</p><p><strong>Follow-through / limit:</strong> Formatting correction requested; final retest not established by this message.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1787033649301359">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-08-19 · Mel</span><strong>Waiver QR destination</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Codes still did not work: they needed to open Clubworx, not Canva, for gym visitors to complete the waiver. She supplied a walkthrough.</p><p><strong>Follow-through / limit:</strong> Repeated correction; successful final end-user retest is not established.</p><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a017d4f8e0b29a5">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-09-04 · Mel</span><strong>Coach attendance assignments</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Flagged incorrectly assigned classes and specified the relevant Tuesday/Thursday schedule.</p><p><strong>Follow-through / limit:</strong> Correction request; dashboard availability is separate from assignment accuracy.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1788500827928589">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-09-09 · Harry</span><strong>Beach Olympics page and email</strong><span class="feedback-type">Approval</span></summary><p><strong>Feedback:</strong> “Yes that is awesome Ram, just checked the email too looks good. Thank you” after Ram shared the page and asked to link it in the weekly email.</p><p><strong>Follow-through / limit:</strong> Approval supported by the preceding 8 September conversation.</p><a href="https://urbanmuaythai.slack.com/archives/D0B0C3UBD6V/p1788905514812549">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-09-09 · Harry</span><strong>Orange Flag outreach</strong><span class="feedback-type">Approval</span></summary><p><strong>Feedback:</strong> “Orange flag is all good to go Ram, thank you”.</p><p><strong>Follow-through / limit:</strong> Explicit operational go-ahead; sending and response outcomes are separate.</p><a href="https://urbanmuaythai.slack.com/archives/C0B5YFZNY1X/p1788913418945139">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-09-09 · Mel</span><strong>Portal and website freshness</strong><span class="feedback-type">Correction</span></summary><p><strong>Feedback:</strong> Requested current event information, the correct Gala date, and Kids/Teens email drafts.</p><p><strong>Follow-through / limit:</strong> Ram reported portal updates and two test emails; the website was still outstanding at that reply.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1788909371134679">Read source ↗</a></details><details class="feedback-entry"><summary><span class="feedback-date">2026-09-09 · Mel</span><strong>Kids and Teens email drafts</strong><span class="feedback-type">Revision request</span></summary><p><strong>Feedback:</strong> “They dont wow me” while reviewing the drafts; she was considering how to change them.</p><p><strong>Follow-through / limit:</strong> Ram agreed to wait for her input. Final approval is not shown in the thread.</p><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1788916974671019">Read source ↗</a></details></div><details class="evidence"><summary>Search coverage and remaining gaps</summary><p>Second pass: Gmail, Slack, seven Drive comment lists, 12 Canva design comment lists, and four GitHub PR discussion timelines. External reviewer feedback came mainly from Gmail and Slack. The checked Drive/GitHub discussions had no comments; Canva returned only a self-authored note.</p><p>Monday.com was not connected. Some Slack searches were rate-limited, including the remaining Jakob keyword search. This register captures verified episodes, not every possible historical comment. It excludes generic acknowledgements, unrelated praise, and original quotes we could not reverify.</p><p><a href="performance-review-feedback.md">Open the complete feedback register and coverage notes</a></p></details></section><div class="rope"><span class="bell">◆ END ROUND 08 ◆</span></div>
+<section id="round-9" class="round dark" data-round="9" data-title="Lessons &amp; quality checks" aria-labelledby="round-title-9" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 09</span><div class="rule"></div></div><h2 id="round-title-9" class="round-title">Make accuracy <span class="accent">repeatable.</span></h2><p class="round-sub">Progress includes recognising where the work needed correction and defining the checks still required.</p><div class="grid-cards"><article class="card"><h3>Fees · Interpret exports correctly</h3><p>August feedback exposed monthly-versus-weekly fee interpretation and blank exported fields. I checked Clubworx and corrected the interpretation. Blank fields did not mean unpaid members or recovered revenue.</p></article><article class="card"><h3>Links · Test the member journey</h3><p>An August QR code opened Canva instead of the member waiver. Mel identified the wrong destination. The source thread does not establish a successful final retest.</p></article><article class="card"><h3>Reports · Check freshness and totals</h3><p>An August engagement report used an older snapshot and had a category-total mismatch. Future reporting needs a visible data date, reconciled totals, and consistent segment labels.</p></article><article class="card"><h3>Campaigns · Keep one approved version</h3><p>Winter Weapon reward revisions show why the final list needs an owner, version date, and signed-off allocation before ordering and handover.</p></article></div><div class="impact-banner"><strong>Next quality standard:</strong> Mel’s June feedback also called for shorter, mobile-readable emails and faster delivery; September feedback highlighted stale event information and drafts needing stronger presentation. For each report or workflow, record the source date, reconcile the key totals, test the recipient-facing link, and flag unresolved exceptions before calling it complete.</div><details class="evidence"><summary>View supporting sources (5)</summary><ul><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/19ffdf3a6d54f1e6">Fee-export corrections · 14 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a01806822ab2646">QR destination correction · 19 August</a></li><li><a href="https://mail.google.com/mail/u/?authuser=getfit%40urbanmuaythai.com#all/1a04628e29806bc8">Engagement report freshness and totals · 28 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1785744073836659">Mel’s reward allocation correction · 3 August</a></li><li><a href="https://urbanmuaythai.slack.com/archives/D0B02Q50XC4/p1785998824314209">Later size reconciliation · 6 August</a></li></ul></details></section><div class="rope"><span class="bell">◆ END ROUND 09 ◆</span></div>
+<section id="round-10" class="round alt" data-round="10" data-title="Next priorities through 27 October" aria-labelledby="round-title-10" tabindex="-1"><div class="eyebrow"><span class="tag">ROUND 10</span><div class="rule"></div></div><h2 id="round-title-10" class="round-title">Finish, verify, <span class="accent">embed.</span></h2><p class="round-sub">Proposed priorities for 16 September–27 October 2026, for alignment with Mel.</p><div class="grid-cards"><article class="card"><h3>16–21 September · Pricing readiness</h3><p>Reconcile remaining pricing exceptions and the uplift calculation; confirm approved member communications and transition handling before the planned effective date.</p></article><article class="card"><h3>By 30 September · Reliable reporting</h3><p>Add freshness, denominator, and total checks to weekly reporting. Confirm coach assignments and the correct reporting period. Agree inputs and ownership for outstanding Xero reconciliation.</p></article><article class="card"><h3>By 30 September · Close delivery loops</h3><p>Confirm Winter Weapon distribution status, obtain consolidated Academy feedback, test the waiver QR journey, and agree the MediaVerse and On The Rise priorities.</p></article><article class="card"><h3>1–27 October · Prove handover</h3><p>Create a clear index of current SOPs and reports. Ask a colleague to run one workflow using its instructions, record the gaps, and update the documentation.</p></article></div><ul class="punchlist"><li>Establish a report-preparation time baseline before setting an efficiency target. The previous 25% goal is not presented as an achieved saving.</li><li>Track completed actions and unresolved dependencies alongside delivery dates; avoid treating a drafted or shared resource as adopted automatically.</li><li>Agree a manageable order of work with Mel while maintaining recurring member administration and reporting.</li></ul><div class="impact-banner"><strong>Proposed completion evidence:</strong> Reconciled report totals; confirmed approvals; tested links; a documented workflow run by another team member; and an agreed list of open items at the October review.</div></section><section id="closing"><div class="display-line">ONE TEAM,<br><span class="red">ONE FIGHT.</span></div><p>I started training on 6 April and began working with Mel on 27 April. Since then, I have helped turn operational information and ideas into reports, workflows, communications, and resources the team can review and use. I am proud of the progress and grateful for the feedback that has improved the work. My next focus is to close the remaining delivery loops, make the checks more reliable, and ensure the systems are easy for others to carry forward.</p><div class="sig">GERAMEL “RAM” TAPIS · REVIEW THROUGH 15 SEPTEMBER 2026</div></section></main><script>
+  const rounds = [...document.querySelectorAll('.round[data-round]')];
+  const sections = [document.getElementById('hero'), ...rounds, document.getElementById('closing')];
+  const tracker = document.getElementById('tracker');
   const numEl = document.getElementById('tracker-num');
   const titleEl = document.getElementById('tracker-title');
   const lightsEl = document.getElementById('tracker-lights');
-
-  // build lights
-  for(let i=0;i<totalRounds;i++){
-    const s = document.createElement('span');
-    lightsEl.appendChild(s);
-  }
-  const lightEls = lightsEl.querySelectorAll('span');
-
-  function update(current){
-    numEl.textContent = String(current).padStart(2,'0');
-    const match = rounds.find(r => Number(r.getAttribute('data-round')) === current);
-    titleEl.textContent = match ? match.getAttribute('data-title') : 'The Opening Bell';
-    lightEls.forEach((el,i)=>{
-      el.classList.toggle('lit', i < current);
+  const links = [...document.querySelectorAll('#contents a')];
+  const printButton = document.getElementById('print-review');
+  const lights = rounds.map(() => lightsEl.appendChild(document.createElement('span')));
+  document.querySelector('#tracker .of').textContent = '/ ' + rounds.length;
+  tracker.hidden = false;
+  printButton.hidden = false;
+  printButton.addEventListener('click', () => window.print());
+  let activeSection;
+  let scheduled = false;
+  function updateTracker() {
+    scheduled = false;
+    // Choose the last section above the reading line, including gaps and the hero.
+    const readingLine = window.innerHeight * 0.35;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= readingLine) current = section;
+      else break;
+    }
+    if (current === activeSection) return;
+    activeSection = current;
+    const isClosing = current.id === 'closing';
+    const round = isClosing ? rounds.length : Number(current.dataset.round || 0);
+    numEl.textContent = String(round).padStart(2, '0');
+    titleEl.textContent = isClosing ? 'Final Bell' : current.dataset.title || 'The Opening Bell';
+    lights.forEach((light, index) => light.classList.toggle('lit', index < round));
+    links.forEach((link, index) => {
+      if (!isClosing && index + 1 === round) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   }
-  update(0);
-
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        update(Number(entry.target.getAttribute('data-round')));
-      }
-    });
-  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-
-  rounds.forEach(r => observer.observe(r));
-
-  // Final bell -> fill all lights
-  const closing = document.getElementById('closing');
-  const closingObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        numEl.textContent = String(totalRounds).padStart(2,'0');
-        titleEl.textContent = 'Final Bell';
-        lightEls.forEach(el=>el.classList.add('lit'));
-      }
-    });
-  }, { threshold: 0.3 });
-  closingObserver.observe(closing);
+  function scheduleUpdate() {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(updateTracker); }
+  }
+  window.addEventListener('scroll', scheduleUpdate, {passive:true});
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('pageshow', scheduleUpdate);
+  document.fonts?.ready.then(scheduleUpdate);
+  updateTracker();
 </script>
 
 </body>
